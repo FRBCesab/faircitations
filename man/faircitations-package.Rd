@@ -4,7 +4,7 @@
 \name{faircitations-package}
 \alias{faircitations}
 \alias{faircitations-package}
-\title{faircitations: The Title of the Project}
+\title{faircitations: How Fair Are You When You Cite Scientific Works?}
 \description{
 A paragraph providing a full description of the project (on several lines...)
 }
