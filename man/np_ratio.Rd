@@ -17,5 +17,22 @@ different statistics.
 ...
 }
 \examples{
-## ADD AN EXAMPLE
+# Import a BiBTex file (provided example) ----
+filename <- system.file(
+  file.path("extdata", "references.bib"),
+  package = "faircitations"
+)
+
+refs <- RefManageR::ReadBib(filename)
+
+length(refs)
+refs[1:5]
+
+# Extract DOI ----
+doi_list <- unlist(refs$"doi")
+names(doi_list) <- NULL
+doi_list
+
+# Compute NP ratio ----
+np_ratio(doi_list)
 }

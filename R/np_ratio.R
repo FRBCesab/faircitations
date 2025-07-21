@@ -8,8 +8,27 @@
 #' @return A `data.frame` with two columns: `metric` and `value` reporting
 #' different statistics.
 #'
+#' @export
+#'
 #' @examples
-#' ## ADD AN EXAMPLE
+#' # Import a BiBTex file (provided example) ----
+#' filename <- system.file(
+#'   file.path("extdata", "references.bib"),
+#'   package = "faircitations"
+#' )
+#'
+#' refs <- RefManageR::ReadBib(filename)
+#'
+#' length(refs)
+#' refs[1:5]
+#'
+#' # Extract DOI ----
+#' doi_list <- unlist(refs$"doi")
+#' names(doi_list) <- NULL
+#' doi_list
+#'
+#' # Compute NP ratio ----
+#' np_ratio(doi_list)
 
 np_ratio <- function(doi) {
   ## Check args ----
@@ -24,12 +43,12 @@ np_ratio <- function(doi) {
 
   ## Check if user is polite ----
 
-  if (is.null(options()$"openalexR.mailto")) {
-    stop(
-      "Be polite with OpenAlex API and run: ",
-      "`options(openalexR.mailto = 'your_email')`"
-    )
-  }
+  # if (is.null(options()$"openalexR.mailto")) {
+  #   stop(
+  #     "Be polite with OpenAlex API and run: ",
+  #     "`options(openalexR.mailto = 'your_email')`"
+  #   )
+  # }
 
   ## Clean references ----
 
@@ -64,46 +83,6 @@ np_ratio <- function(doi) {
 
   ## Add Dafnee metadata ----
 
-  dafnee <- utils::read.csv(file.path(
-    "data",
-    "derived-data",
-    "final_list_of_journals.csv"
-  ))
-
-  # dafnee <- dafnee[, c("oa_source_id", "business_model", "is_dafnee")]
-
-  ## Clean Dafnee data ----
-
-  dafnee$"business_model" <- gsub(
-    "For-profit",
-    "FP",
-    dafnee$"business_model"
-  )
-
-  dafnee$"business_model" <- gsub(
-    "Non-profit",
-    "NP",
-    dafnee$"business_model"
-  )
-
-  dafnee$"business_model" <- gsub(
-    "University Press",
-    "NP",
-    dafnee$"business_model"
-  )
-
-  dafnee[which(dafnee$business_model == "NP"), "is_dafnee"] <- TRUE
-
-  ## Merge datasets ----
-
-  all_data <- merge(
-    works,
-    dafnee,
-    by = "oa_source_id",
-    all.x = TRUE,
-    all.y = FALSE
-  )
-
   data_for_ratio <- merge(works, dafnee, by = "oa_source_id", all = FALSE)
 
   ## Compute ratios ----
@@ -112,12 +91,13 @@ np_ratio <- function(doi) {
 
   n_refs_np <- length(which(data_for_ratio$"business_model" == "NP"))
   n_refs_fp_acad <- length(which(
-    data_for_ratio$"business_model" == "FP" & data_for_ratio$"is_dafnee" == TRUE
+    data_for_ratio$"business_model" == "FP" &
+      data_for_ratio$"academic_friendly" == "yes"
   ))
 
   n_refs_fp_nonacad <- length(which(
     data_for_ratio$"business_model" == "FP" &
-      data_for_ratio$"is_dafnee" == FALSE
+      data_for_ratio$"academic_friendly" == "no"
   ))
 
   ## Outputs ----
