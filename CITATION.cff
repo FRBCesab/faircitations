@@ -32,6 +32,17 @@ contact:
   orcid: https://orcid.org/0000-0002-5537-5294
 references:
 - type: software
+  title: 'R: A Language and Environment for Statistical Computing'
+  notes: Depends
+  url: https://www.R-project.org/
+  authors:
+  - name: R Core Team
+  institution:
+    name: R Foundation for Statistical Computing
+    address: Vienna, Austria
+  year: '2025'
+  version: '>= 3.5'
+- type: software
   title: openalexR
   abstract: 'openalexR: Getting Bibliographic Records from ''OpenAlex'' Database Using
     ''DSL'' API'
@@ -54,16 +65,6 @@ references:
   year: '2025'
   doi: 10.32614/CRAN.package.openalexR
 - type: software
-  title: utils
-  abstract: 'R: A Language and Environment for Statistical Computing'
-  notes: Imports
-  authors:
-  - name: R Core Team
-  institution:
-    name: R Foundation for Statistical Computing
-    address: Vienna, Austria
-  year: '2025'
-- type: software
   title: knitr
   abstract: 'knitr: A General-Purpose Package for Dynamic Report Generation in R'
   notes: Suggests
@@ -76,6 +77,20 @@ references:
     orcid: https://orcid.org/0000-0003-0645-5666
   year: '2025'
   doi: 10.32614/CRAN.package.knitr
+- type: software
+  title: RefManageR
+  abstract: 'RefManageR: Straightforward ''BibTeX'' and ''BibLaTeX'' Bibliography
+    Management'
+  notes: Suggests
+  url: https://github.com/ropensci/RefManageR/
+  repository: https://CRAN.R-project.org/package=RefManageR
+  authors:
+  - family-names: McLean
+    given-names: Mathew W.
+    email: mathew.w.mclean@gmail.com
+    orcid: https://orcid.org/0000-0002-7891-9645
+  year: '2025'
+  doi: 10.32614/CRAN.package.RefManageR
 - type: software
   title: rmarkdown
   abstract: 'rmarkdown: Dynamic Documents for R'
