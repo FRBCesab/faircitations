@@ -1,0 +1,10 @@
+citHeader("To cite faircitations in publications use:")
+
+bibentry(
+  bibtype = "Manual",
+  title   = "faircitations: {An} {R} package to ...",
+  author  = c(person("Casajus Nicolas")),
+  year    = "2025",
+  note    = "R package version 0.0.0.9000",
+  url     = "https://github.com/frbcesab/faircitations"
+)
