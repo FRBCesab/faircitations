@@ -72,7 +72,82 @@ different statistics.</p>
 
     <div id="ref-examples">
     <h2>Examples</h2>
-    <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span><span class="co">## ADD AN EXAMPLE</span></span></span>
+    <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span><span class="co"># Import a BiBTex file (provided example) ----</span></span></span>
+<span class="r-in"><span><span class="va">filename</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/system.file.html" class="external-link">system.file</a></span><span class="op">(</span></span></span>
+<span class="r-in"><span>  <span class="fu"><a href="https://rdrr.io/r/base/file.path.html" class="external-link">file.path</a></span><span class="op">(</span><span class="st">"extdata"</span>, <span class="st">"references.bib"</span><span class="op">)</span>,</span></span>
+<span class="r-in"><span>  package <span class="op">=</span> <span class="st">"faircitations"</span></span></span>
+<span class="r-in"><span><span class="op">)</span></span></span>
+<span class="r-in"><span></span></span>
+<span class="r-in"><span><span class="va">refs</span> <span class="op">&lt;-</span> <span class="fu">RefManageR</span><span class="fu">::</span><span class="fu"><a href="https://docs.ropensci.org/RefManageR/reference/ReadBib.html" class="external-link">ReadBib</a></span><span class="op">(</span><span class="va">filename</span><span class="op">)</span></span></span>
+<span class="r-in"><span></span></span>
+<span class="r-in"><span><span class="fu"><a href="https://rdrr.io/r/base/length.html" class="external-link">length</a></span><span class="op">(</span><span class="va">refs</span><span class="op">)</span></span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [1] 38</span>
+<span class="r-in"><span><span class="va">refs</span><span class="op">[</span><span class="fl">1</span><span class="op">:</span><span class="fl">5</span><span class="op">]</span></span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [1] R. Johnson, A. Watkinson, and M. Mabe. “The STM report”. In: _An</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> overview of scientific and scholarly publishing. 5th edition October_</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 94 (2018).</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> &lt;https://policycommons.net/artifacts/1575771/2018_10_04_stm_report_2018/2265545/&gt;.</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [2] P. E. Smaldino and R. McElreath. “The natural selection of bad</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> science”. En. In: _Royal Society Open Science_ 3.9 (Sep. 2016), p.</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 160384. ISSN: 2054-5703. DOI: 10.1098/rsos.160384.</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> &lt;https://royalsocietypublishing.org/doi/10.1098/rsos.160384&gt; (visited</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> on 07/10/2025).</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [3] H. H. Thorp. “Proudly nonprofit”. In: _Science_ 381.6665 (Sep.</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 2023). Publisher: American Association for the Advancement of Science,</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> pp. 1377-1377. DOI: 10.1126/science.adk9900.</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> &lt;https://www.science.org/doi/10.1126/science.adk9900&gt; (visited on</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 06/30/2025).</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [4] D. Vervoort, X. Ma, and H. Bookholane. “Equitable Open Access</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> Publishing: Changing the Financial Power Dynamics in Academia”. En. In:</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> _Global Health: Science and Practice_ 9.4 (Dec. 2021). Publisher:</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> Global Health: Science and Practice Section: VIEWPOINT, pp. 733-736.</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> ISSN: 2169-575X. DOI: 10.9745/GHSP-D-21-00145.</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> &lt;https://www.ghspjournal.org/content/9/4/733&gt; (visited on 05/13/2025).</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [5] A. W. Wilhite and E. A. Fong. “Coercive Citation in Academic</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> Publishing”. In: _Science_ 335.6068 (Feb. 2012). Publisher: American</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> Association for the Advancement of Science, pp. 542-543. DOI:</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 10.1126/science.1212540.</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> &lt;https://www.science.org/doi/full/10.1126/science.1212540&gt; (visited on</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 06/26/2025).</span>
+<span class="r-in"><span></span></span>
+<span class="r-in"><span><span class="co"># Extract DOI ----</span></span></span>
+<span class="r-in"><span><span class="va">doi_list</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/unlist.html" class="external-link">unlist</a></span><span class="op">(</span><span class="va">refs</span><span class="op">$</span><span class="st">"doi"</span><span class="op">)</span></span></span>
+<span class="r-in"><span><span class="fu"><a href="https://rdrr.io/r/base/names.html" class="external-link">names</a></span><span class="op">(</span><span class="va">doi_list</span><span class="op">)</span> <span class="op">&lt;-</span> <span class="cn">NULL</span></span></span>
+<span class="r-in"><span><span class="va">doi_list</span></span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  [1] "10.1098/rsos.160384"               "10.1126/science.1212540"          </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  [3] "10.9745/GHSP-D-21-00145"           "10.1126/science.adk9900"          </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  [5] "10.1016/j.ecolecon.2021.107082"    "10.1177/014107680609900316"       </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  [7] "10.1093/reseval/rvad012"           "10.1111/ele.14395"                </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  [9] "10.3998/ptpbio.3363"               "10.4000/proceedings.elpub.2018.30"</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [11] "10.1093/scipol/scs093"             "10.1002/leap.1102"                </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [13] "10.1087/0953151053584975"          "10.1177/0263395719858571"         </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [15] "10.1017/S1062798709000532"         "10.1371/journal.pone.0127502"     </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [17] "10.1162/qss_c_00305"               "10.1007/978-3-030-02511-3_1"      </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [19] "10.1371/journal.pbio.1002264"      "10.3389/frma.2016.00007"          </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [21] "10.48550/arXiv.2407.16551"         "10.1080/08109028.2014.891710"     </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [23] "10.1007/s11192-022-04586-1"        "10.1098/rspb.2019.2047"           </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [25] "10.5281/zenodo.4558704"            "10.1162/qss_a_00272"              </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [27] "10.3917/inno.063.0095"             "10.1371/journal.pone.0243664"     </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [29] "10.1257/jep.15.4.183"              "10.1073/pnas.0305628101"          </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [31] "10.1016/j.amjmed.2019.07.028"      "10.32614/RJ-2023-089"             </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [33] "10.5534/wjmh.230001"              </span>
+<span class="r-in"><span></span></span>
+<span class="r-in"><span><span class="co"># Compute NP ratio ----</span></span></span>
+<span class="r-in"><span><span class="fu">np_ratio</span><span class="op">(</span><span class="va">doi_list</span><span class="op">)</span></span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>                                          metric value</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 1                              N. of total refs  33.0</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 2                             N. of refs w/ DOI  33.0</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 3                      N. of refs w/o duplicate  33.0</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 4                  N. of refs found in OpenAlex  30.0</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 5                    N. of refs found in Dafnee  10.0</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 6                         N. of Non-Profit refs   9.0</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 7     N. of For-Profit refs (academic friendly)   1.0</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 8 N. of For-Profit refs (non-academic friendly)   0.0</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 9                              Non-Profit ratio   0.9</span>
 </code></pre></div>
     </div>
   </div>
