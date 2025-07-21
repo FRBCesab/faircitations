@@ -1,3 +1,4 @@
+
 <!-- README.md is generated from README.Rmd. Please edit that file -->
 
 # faircitations <img src="man/figures/package-sticker.png" align="right" style="float:right; height:120px;"/>
@@ -12,7 +13,7 @@ Check](https://github.com/frbcesab/faircitations/actions/workflows/R-CMD-check.y
 [![Test
 coverage](https://github.com/frbcesab/faircitations/actions/workflows/test-coverage.yaml/badge.svg)](https://github.com/frbcesab/faircitations/actions/workflows/test-coverage.yaml)
 [![codecov](https://codecov.io/gh/frbcesab/faircitations/branch/main/graph/badge.svg)](https://codecov.io/gh/frbcesab/faircitations)
-[![License: GPL (&gt;=
+[![License: GPL (\>=
 2)](https://img.shields.io/badge/License-GPL%20%28%3E%3D%202%29-blue.svg)](https://choosealicense.com/licenses/gpl-2.0/)
 <!-- badges: end -->
 
@@ -42,17 +43,21 @@ FEATURES }}**
 You can install the development version from
 [GitHub](https://github.com/) with:
 
-    ## Install < remotes > package (if not already installed) ----
-    if (!requireNamespace("remotes", quietly = TRUE)) {
-      install.packages("remotes")
-    }
+``` r
+## Install < remotes > package (if not already installed) ----
+if (!requireNamespace("remotes", quietly = TRUE)) {
+  install.packages("remotes")
+}
 
-    ## Install < faircitations > from GitHub ----
-    remotes::install_github("frbcesab/faircitations")
+## Install < faircitations > from GitHub ----
+remotes::install_github("frbcesab/faircitations")
+```
 
 Then you can attach the package `faircitations`:
 
-    library("faircitations")
+``` r
+library("faircitations")
+```
 
 ## Get started
 
@@ -66,10 +71,10 @@ vignette.
 `faircitations` provides **{{ NUMBER OF VIGNETTES }}** vignettes to
 learn more about the package:
 
--   the [Get
-    started](https://frbcesab.github.io/faircitations/articles/faircitations.html)
-    vignette describes the core features of the package
--   **{{ LIST ADDITIONAL VIGNETTES }}**
+- the [Get
+  started](https://frbcesab.github.io/faircitations/articles/faircitations.html)
+  vignette describes the core features of the package
+- **{{ LIST ADDITIONAL VIGNETTES }}**
 
 ## Citation
 
