@@ -1,7 +1,7 @@
 
 <!-- README.md is generated from README.Rmd. Please edit that file -->
 
-# faircitations <img src="man/figures/package-sticker.png" align="right" style="float:right; height:120px;"/>
+# fairpub <img src="man/figures/package-sticker.png" align="right" style="float:right; height:120px;"/>
 
 <!-- badges: start -->
 
@@ -9,10 +9,10 @@
 ![Lifecycle
 Maturing](https://img.shields.io/badge/Lifecycle-Maturing-007EC6)
 [![CRAN
-status](https://www.r-pkg.org/badges/version/faircitations)](https://CRAN.R-project.org/package=faircitations)
+status](https://www.r-pkg.org/badges/version/fairpub)](https://CRAN.R-project.org/package=fairpub)
 [![R CMD
-Check](https://github.com/frbcesab/faircitations/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/frbcesab/faircitations/actions/workflows/R-CMD-check.yaml)
-[![Website](https://github.com/frbcesab/faircitations/actions/workflows/pkgdown.yaml/badge.svg)](https://github.com/frbcesab/faircitations/actions/workflows/pkgdown.yaml)
+Check](https://github.com/frbcesab/fairpub/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/frbcesab/fairpub/actions/workflows/R-CMD-check.yaml)
+[![Website](https://github.com/frbcesab/fairpub/actions/workflows/pkgdown.yaml/badge.svg)](https://github.com/frbcesab/fairpub/actions/workflows/pkgdown.yaml)
 [![License: GPL (\>=
 2)](https://img.shields.io/badge/License-GPL%20%28%3E%3D%202%29-blue.svg)](https://choosealicense.com/licenses/gpl-2.0/)
 <!-- badges: end -->
@@ -45,28 +45,27 @@ choosing to cite relevant articles from non-profit journals when
 multiple references would be equally valid, researchers can contribute
 to increasing their visibility and future impact factor.
 
-The aim of the R package `faircitations` is to provide a user-friendly
-way to compute the non-profit and academic friendly ratio of the
-bibliographic reference list before submitting a manuscript for peer
-review.
+The aim of the R package `fairpub` is to provide a user-friendly way to
+compute the non-profit and academic friendly ratio of the bibliographic
+reference list before submitting a manuscript for peer review.
 
 ## Features
 
-`faircitations` reads a bibliographic file (e.g. BibTeX) to extract
-article DOI. Then it queries the [OpenAlex](https://openalex.org)
-bibliographic database to retrieve journal names. Finally it uses the
-[DAFNEE database](https://dafnee.isem-evolution.fr/) that provides the
-business model and the academic friendly status of several journals in
-the field of Ecology and Evolution to compute the non-profit and
-academic friendly ratio.
+`fairpub` reads a bibliographic file (e.g. BibTeX) to extract article
+DOI. Then it queries the [OpenAlex](https://openalex.org) bibliographic
+database to retrieve journal names. Finally it uses the [DAFNEE
+database](https://dafnee.isem-evolution.fr/) that provides the business
+model and the academic friendly status of several journals in the field
+of Ecology and Evolution to compute the non-profit and academic friendly
+ratio.
 
 Currently two functions are implemented:
 
 - the
-  [`fp_compute_ratio()`](https://frbcesab.github.io/faircitations/reference/fp_compute_ratio.html)
+  [`fp_compute_ratio()`](https://frbcesab.github.io/fairpub/reference/fp_compute_ratio.html)
   function helps user to compute citation ratios,
 - the
-  [`fp_get_dafnee_journals()`](https://frbcesab.github.io/faircitations/reference/fp_get_dafnee_journals.html)
+  [`fp_get_dafnee_journals()`](https://frbcesab.github.io/fairpub/reference/fp_get_dafnee_journals.html)
   function lists the available DAFNEE journals.
 
 ## Installation
@@ -80,20 +79,20 @@ if (!requireNamespace("remotes", quietly = TRUE)) {
   install.packages("remotes")
 }
 
-# Install < faircitations > from GitHub ----
-remotes::install_github("frbcesab/faircitations")
+# Install < fairpub > from GitHub ----
+remotes::install_github("frbcesab/fairpub")
 ```
 
-Then you can attach the package `faircitations`:
+Then you can attach the package `fairpub`:
 
 ``` r
-library("faircitations")
+library("fairpub")
 ```
 
 ## Get started
 
-The main function of `faircitations` is
-[`fp_compute_ratio()`](https://frbcesab.github.io/faircitations/reference/fp_compute_ratio.html).
+The main function of `fairpub` is
+[`fp_compute_ratio()`](https://frbcesab.github.io/fairpub/reference/fp_compute_ratio.html).
 From a vector of article DOI, this function will report the following
 metrics:
 
@@ -118,20 +117,20 @@ fp_compute_ratio(doi = list_of_doi)
 
 ## Citation
 
-Please cite `faircitations` as:
+Please cite `fairpub` as:
 
-> Casajus Nicolas (2025) faircitations: How fair are you when you cite
+> Casajus Nicolas (2025) fairpub: How fair are you when you cite
 > scientific works? R package version 0.0.1.
-> <https://github.com/frbcesab/faircitations/>
+> <https://github.com/frbcesab/fairpub/>
 
 ## Contributing
 
 All types of contributions are encouraged and valued. For more
 information, check out our [Contributor
-Guidelines](https://github.com/frbcesab/faircitations/blob/main/CONTRIBUTING.md).
+Guidelines](https://github.com/frbcesab/fairpub/blob/main/CONTRIBUTING.md).
 
-Please note that the `faircitations` project is released with a
-[Contributor Code of
+Please note that the `fairpub` project is released with a [Contributor
+Code of
 Conduct](https://contributor-covenant.org/version/2/1/CODE_OF_CONDUCT.html).
 By contributing to this project, you agree to abide by its terms.
 

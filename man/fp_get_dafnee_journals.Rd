@@ -22,11 +22,11 @@ Evolution, \url{https://dafnee.isem-evolution.fr/}) provides the business model
 and the academic friendly status of several journals in the field of Ecology
 and Evolution.
 
-The \code{faircitations} package provides a selection of 291 DAFNEE journals and
+The \code{fairpub} package provides a selection of 291 DAFNEE journals and
 this function returns information about these journals
 }
 \examples{
-# List DAFNEE journals in faircitations ----
+# List DAFNEE journals in fairpub ----
 journals <- fp_get_dafnee_journals()
 
 # Number of journals ----

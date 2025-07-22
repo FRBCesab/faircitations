@@ -1,11 +1,11 @@
 {
   "@context": "https://doi.org/10.5063/schema/codemeta-2.0",
   "@type": "SoftwareSourceCode",
-  "identifier": "faircitations",
+  "identifier": "fairpub",
   "description": "Provides a user-friendly way to compute the non-profit and academic friendly ratio of the bibliographic reference list before submitting a manuscript for peer review.",
-  "name": "faircitations: How Fair Are You When You Cite Scientific Works?",
-  "codeRepository": "https://github.com/frbcesab/faircitations",
-  "issueTracker": "https://github.com/frbcesab/faircitations/issues",
+  "name": "fairpub: How Fair Are You When You Publish/Cite Scientific Works?",
+  "codeRepository": "https://github.com/frbcesab/fairpub",
+  "issueTracker": "https://github.com/frbcesab/fairpub/issues",
   "license": "https://spdx.org/licenses/GPL-2.0",
   "version": "0.0.0.9000",
   "programmingLanguage": {
@@ -41,20 +41,6 @@
       "@id": "https://orcid.org/0000-0002-5537-5294"
     }
   ],
-  "softwareSuggestions": [
-    {
-      "@type": "SoftwareApplication",
-      "identifier": "RefManageR",
-      "name": "RefManageR",
-      "provider": {
-        "@id": "https://cran.r-project.org",
-        "@type": "Organization",
-        "name": "Comprehensive R Archive Network (CRAN)",
-        "url": "https://cran.r-project.org"
-      },
-      "sameAs": "https://CRAN.R-project.org/package=RefManageR"
-    }
-  ],
   "softwareRequirements": {
     "1": {
       "@type": "SoftwareApplication",
@@ -74,9 +60,21 @@
       },
       "sameAs": "https://CRAN.R-project.org/package=openalexR"
     },
+    "3": {
+      "@type": "SoftwareApplication",
+      "identifier": "RefManageR",
+      "name": "RefManageR",
+      "provider": {
+        "@id": "https://cran.r-project.org",
+        "@type": "Organization",
+        "name": "Comprehensive R Archive Network (CRAN)",
+        "url": "https://cran.r-project.org"
+      },
+      "sameAs": "https://CRAN.R-project.org/package=RefManageR"
+    },
     "SystemRequirements": null
   },
-  "fileSize": "271.805KB",
+  "fileSize": "273.97KB",
   "citation": [
     {
       "@type": "SoftwareSourceCode",
@@ -87,12 +85,11 @@
           "name": "Casajus Nicolas"
         }
       ],
-      "name": "faircitations: How fair are you when you cite scientific works?",
-      "url": "https://github.com/frbcesab/faircitations",
+      "name": "fairpub: How fair are you when you cite scientific works?",
+      "url": "https://github.com/frbcesab/fairpub",
       "description": "R package version 0.0.1"
     }
   ],
-  "releaseNotes": "https://github.com/frbcesab/faircitations/blob/master/NEWS.md",
-  "readme": "https://github.com/FRBCesab/faircitations/blob/main/README.md",
-  "contIntegration": ["https://github.com/frbcesab/faircitations/actions/workflows/R-CMD-check.yaml", "https://github.com/frbcesab/faircitations/actions/workflows/pkgdown.yaml"]
+  "releaseNotes": "https://github.com/frbcesab/fairpub/blob/master/NEWS.md",
+  "contIntegration": ["https://github.com/frbcesab/fairpub/actions/workflows/R-CMD-check.yaml", "https://github.com/frbcesab/fairpub/actions/workflows/pkgdown.yaml"]
 }

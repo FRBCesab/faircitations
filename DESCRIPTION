@@ -1,6 +1,6 @@
-Package: faircitations
+Package: fairpub
 Type: Package
-Title: How Fair Are You When You Cite Scientific Works?
+Title: How Fair Are You When You Publish/Cite Scientific Works?
 Version: 0.0.0.9000
 Authors@R: c(
     person(given   = "Nicolas",
@@ -11,8 +11,8 @@ Authors@R: c(
 Description: Provides a user-friendly way to compute the non-profit and academic
     friendly ratio of the bibliographic reference list before submitting a 
     manuscript for peer review.
-URL: https://github.com/frbcesab/faircitations
-BugReports: https://github.com/frbcesab/faircitations/issues
+URL: https://github.com/frbcesab/fairpub
+BugReports: https://github.com/frbcesab/fairpub/issues
 License: GPL (>= 2)
 Encoding: UTF-8
 LazyData: true

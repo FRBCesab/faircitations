@@ -14,10 +14,10 @@
 #' @export
 #'
 #' @examples
-#' # Path to the BibTeX provided by <faircitations> ----
+#' # Path to the BibTeX provided by <fairpub> ----
 #' filename <- system.file(
 #'   file.path("extdata", "references.bib"),
-#'   package = "faircitations"
+#'   package = "fairpub"
 #' )
 #'
 #' # Extract DOI from BibTeX ----
