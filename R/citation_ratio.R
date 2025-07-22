@@ -42,20 +42,28 @@
 #'   landscape. Submitted to Proc B - Biological Science Practices.
 #'
 #' @examples
-#' # Import a BiBTex file (provided example) ----
+#' # Path to the BibTeX provided by <faircitations> ----
 #' filename <- system.file(
 #'   file.path("extdata", "references.bib"),
 #'   package = "faircitations"
 #' )
 #'
+#' # Import the BibTex file ----
 #' refs <- RefManageR::ReadBib(filename)
 #'
+#' # Number of references ----
 #' length(refs)
+#'
+#' # Preview of the object
 #' refs[1:2]
 #'
 #' # Extract DOI ----
 #' doi_list <- unlist(refs$"doi")
+#'
+#' # Remove names ----
 #' names(doi_list) <- NULL
+#'
+#' # Print DOI ----
 #' doi_list
 #'
 #' # Compute citation ratios ----

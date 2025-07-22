@@ -29,6 +29,9 @@ this function returns information about these journals
 # List DAFNEE journals in faircitations ----
 journals <- get_dafnee_journals()
 
+# Number of journals ----
 nrow(journals)
+
+# Preview of the outputs ----
 head(journals)
 }

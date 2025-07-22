@@ -22,7 +22,10 @@
 #' # List DAFNEE journals in faircitations ----
 #' journals <- get_dafnee_journals()
 #'
+#' # Number of journals ----
 #' nrow(journals)
+#'
+#' # Preview of the outputs ----
 #' head(journals)
 
 get_dafnee_journals <- function() {
