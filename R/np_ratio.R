@@ -68,8 +68,16 @@ np_ratio <- function(doi) {
     stop("Argument 'doi' is required")
   }
 
+  if (is.null(doi)) {
+    stop("Argument 'doi' is required")
+  }
+
   if (!is.character(doi)) {
     stop("Argument 'doi' must be character")
+  }
+
+  if (length(doi) == 0) {
+    stop("Argument 'doi' must be of length > 0")
   }
 
   ## Check if user is polite ----
@@ -81,23 +89,55 @@ np_ratio <- function(doi) {
   #   )
   # }
 
-  ## Clean references ----
+  ## Fill summary output ----
 
-  n_original_refs <- length(doi)
+  report <- data.frame()
+  report <- rbind(
+    report,
+    data.frame(
+      "metric" = "Total references",
+      "value" = length(doi)
+    )
+  )
+
+  ## Remove missing DOI ----
 
   doi <- doi[!is.na(doi)]
-  n_refs_without_na <- length(doi)
+
+  report <- rbind(
+    report,
+    data.frame(
+      "metric" = "References with DOI",
+      "value" = length(doi)
+    )
+  )
+
+  if (length(doi) == 0) {
+    stop("No valid DOI provided (missing value)")
+  }
+
+  ## Clean DOI ----
 
   doi <- gsub("https://doi.org/", "", doi)
   doi <- tolower(doi)
 
+  ## Remove duplicated references ----
+
   doi <- doi[!duplicated(doi)]
-  n_refs_without_dups <- length(doi)
+
+  report <- rbind(
+    report,
+    data.frame(
+      "metric" = "Deduplicated references",
+      "value" = length(doi)
+    )
+  )
 
   ## Get OpenAlex metadata ----
 
-  works <- openalexR::oa_fetch(entity = "work", doi = doi) |>
-    as.data.frame()
+  works <- openalexR::oa_fetch(entity = "work", doi = doi)
+  works <- as.data.frame(works)
+
   works <- works[, c("doi", "source_id")]
   colnames(works)[2] <- "oa_source_id"
 
@@ -110,51 +150,102 @@ np_ratio <- function(doi) {
 
   works <- merge(doi, works, by = "doi", all = TRUE)
 
-  n_refs_in_openalex <- sum(!is.na(works$"oa_source_id"))
+  ## Remove references absent from OA ----
 
-  ## Add Dafnee metadata ----
+  works <- works[!is.na(works$"oa_source_id"), ]
+
+  report <- rbind(
+    report,
+    data.frame(
+      "metric" = "References found in OpenAlex",
+      "value" = nrow(works)
+    )
+  )
+
+  if (nrow(works) == 0) {
+    stop("No reference found in OpenAlex")
+  }
+
+  ## Add Dafnee metadata (internal dataset) ----
 
   data_for_ratio <- merge(works, dafnee, by = "oa_source_id", all = FALSE)
+
+  report <- rbind(
+    report,
+    data.frame(
+      "metric" = "References found in DAFNEE",
+      "value" = nrow(data_for_ratio)
+    )
+  )
+
+  if (nrow(data_for_ratio) == 0) {
+    stop("No reference journal found in DAFNEE database")
+  }
 
   ## Compute ratios ----
 
   n_refs_in_dafnee <- nrow(data_for_ratio)
 
-  n_refs_np <- length(which(data_for_ratio$"business_model" == "NP"))
-  n_refs_fp_acad <- length(which(
-    data_for_ratio$"business_model" == "FP" &
-      data_for_ratio$"academic_friendly" == "yes"
-  ))
+  n_refs_np <- length(
+    which(
+      data_for_ratio$"business_model" == "NP"
+    )
+  )
 
-  n_refs_fp_nonacad <- length(which(
-    data_for_ratio$"business_model" == "FP" &
-      data_for_ratio$"academic_friendly" == "no"
-  ))
+  report <- rbind(
+    report,
+    data.frame(
+      "metric" = "Non-profit and academic friendly references",
+      "value" = n_refs_np
+    )
+  )
+
+  n_refs_fp_acad <- length(
+    which(
+      data_for_ratio$"business_model" == "FP" &
+        data_for_ratio$"academic_friendly" == "yes"
+    )
+  )
+
+  report <- rbind(
+    report,
+    data.frame(
+      "metric" = "For-profit and academic friendly references",
+      "value" = n_refs_fp_acad
+    )
+  )
+
+  n_refs_fp_nonacad <- length(
+    which(
+      data_for_ratio$"business_model" == "FP" &
+        data_for_ratio$"academic_friendly" == "no"
+    )
+  )
+
+  report <- rbind(
+    report,
+    data.frame(
+      "metric" = "For-profit and non-academic friendly references",
+      "value" = n_refs_fp_nonacad
+    )
+  )
 
   ## Outputs ----
 
-  data.frame(
-    "metric" = c(
-      "N. of total refs",
-      "N. of refs w/ DOI",
-      "N. of refs w/o duplicate",
-      "N. of refs found in OpenAlex",
-      "N. of refs found in Dafnee",
-      "N. of Non-Profit refs",
-      "N. of For-Profit refs (academic friendly)",
-      "N. of For-Profit refs (non-academic friendly)",
-      "Non-Profit ratio"
+  ratios <- c(
+    "Non-profit and academic friendly" = round(
+      n_refs_np / n_refs_in_dafnee,
+      2
     ),
-    "value" = c(
-      n_original_refs,
-      n_refs_without_na,
-      n_refs_without_dups,
-      n_refs_in_openalex,
-      n_refs_in_dafnee,
-      n_refs_np,
-      n_refs_fp_acad,
-      n_refs_fp_nonacad,
-      n_refs_np / nrow(data_for_ratio)
+    "For-profit and academic friendly" = round(
+      n_refs_fp_acad / n_refs_in_dafnee,
+      2
+    ),
+    "For-profit and non-academic friendly" = round(
+      n_refs_fp_nonacad / n_refs_in_dafnee,
+      2
     )
   )
+
+  list("summary" = report, "ratios" = ratios)
 }
