@@ -7,7 +7,7 @@
   "codeRepository": "https://github.com/frbcesab/fairpub",
   "issueTracker": "https://github.com/frbcesab/fairpub/issues",
   "license": "https://spdx.org/licenses/GPL-2.0",
-  "version": "0.0.0.9000",
+  "version": "0.0.1.9000",
   "programmingLanguage": {
     "@type": "ComputerLanguage",
     "name": "R",
