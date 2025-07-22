@@ -59,9 +59,9 @@
 #' doi_list
 #'
 #' # Compute citation ratios ----
-#' np_ratio(doi_list)
+#' citation_ratio(doi_list)
 
-np_ratio <- function(doi) {
+citation_ratio <- function(doi) {
   ## Check args ----
 
   if (missing(doi)) {
