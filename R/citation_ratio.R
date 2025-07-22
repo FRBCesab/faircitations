@@ -48,20 +48,8 @@
 #'   package = "faircitations"
 #' )
 #'
-#' # Import the BibTex file ----
-#' refs <- RefManageR::ReadBib(filename)
-#'
-#' # Number of references ----
-#' length(refs)
-#'
-#' # Preview of the object
-#' refs[1:2]
-#'
-#' # Extract DOI ----
-#' doi_list <- unlist(refs$"doi")
-#'
-#' # Remove names ----
-#' names(doi_list) <- NULL
+#' # Extract DOI from BibTeX ----
+#' doi_list <- doi_from_bibtex(filename)
 #'
 #' # Print DOI ----
 #' doi_list
