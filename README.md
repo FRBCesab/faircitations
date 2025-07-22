@@ -1,9 +1,7 @@
 
 <!-- README.md is generated from README.Rmd. Please edit that file -->
 
-fairpub: How fair are you when you publish/cite scientific works?
-<img src="man/figures/package-sticker.png" align="right" style="float:right; height:120px;"/>
-=========================================================
+# fairpub: How fair are you when you publish/cite scientific works? <img src="man/figures/package-sticker.png" align="right" style="float:right; height:120px;"/>
 
 <!-- badges: start -->
 
