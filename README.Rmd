@@ -16,7 +16,8 @@ knitr::opts_chunk$set(
 
 
 
-fairpub <img src="man/figures/package-sticker.png" align="right" style="float:right; height:120px;"/>
+fairpub: How fair are you
+when you publish/cite scientific works? <img src="man/figures/package-sticker.png" align="right" style="float:right; height:120px;"/>
 =========================================================
 
 <!-- badges: start -->
@@ -138,7 +139,7 @@ Visit the [Get started](https://frbcesab.github.io/fairpub/articles/fairpub.html
 Please cite `fairpub` as: 
 
 > Casajus Nicolas (`r format(Sys.Date(), "%Y")`) fairpub: How fair are you
-when you cite scientific works? R package version 0.0.1. 
+when you publish/cite scientific works? R package version 0.0.1. 
 <https://github.com/frbcesab/fairpub/>
 
 

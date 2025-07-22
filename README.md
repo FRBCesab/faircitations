@@ -1,7 +1,9 @@
 
 <!-- README.md is generated from README.Rmd. Please edit that file -->
 
-# fairpub <img src="man/figures/package-sticker.png" align="right" style="float:right; height:120px;"/>
+fairpub: How fair are you when you publish/cite scientific works?
+<img src="man/figures/package-sticker.png" align="right" style="float:right; height:120px;"/>
+=========================================================
 
 <!-- badges: start -->
 
@@ -123,7 +125,7 @@ vignette for other usage of the `fairpub` package.
 
 Please cite `fairpub` as:
 
-> Casajus Nicolas (2025) fairpub: How fair are you when you cite
+> Casajus Nicolas (2025) fairpub: How fair are you when you publish/cite
 > scientific works? R package version 0.0.1.
 > <https://github.com/frbcesab/fairpub/>
 
