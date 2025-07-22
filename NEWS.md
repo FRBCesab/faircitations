@@ -10,6 +10,10 @@
 - New function `fb_doi_from_bibtex()`
 - New function `fb_clean_doi()`
 
+## Documentation
+
+- Add a Get started vignette
+
 
 # fairpub 0.0.1
 

@@ -106,7 +106,7 @@ library("fairpub")
 
 ## Get started
 
-The main function of `fairpub` is [`fp_compute_ratio()`](https://frbcesab.github.io/fairpub/reference/fp_compute_ratio.html). From a vector of article DOI, this  function will report the following metrics:
+The main function of `fairpub` is [`fp_compute_ratio()`](https://frbcesab.github.io/fairpub/reference/fp_compute_ratio.html). From a vector of article DOI, this function will report the following metrics:
 
 ```{r eval=FALSE}
 fp_compute_ratio(doi = list_of_doi)
@@ -128,6 +128,9 @@ fp_compute_ratio(doi = list_of_doi)
 ## Non-profit & acad. friendly  For-profit & acad. friendly  For-profit & non-acad. friendly 
 ##                         0.9                          0.1                              0.0 
 ```
+
+Visit the [Get started](https://frbcesab.github.io/fairpub/articles/fairpub.html) vignette for other usage of the `fairpub` package.
+
 
 
 ## Citation

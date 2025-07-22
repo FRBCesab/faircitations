@@ -115,6 +115,10 @@ fp_compute_ratio(doi = list_of_doi)
     ## Non-profit & acad. friendly  For-profit & acad. friendly  For-profit & non-acad. friendly 
     ##                         0.9                          0.1                              0.0 
 
+Visit the [Get
+started](https://frbcesab.github.io/fairpub/articles/fairpub.html)
+vignette for other usage of the `fairpub` package.
+
 ## Citation
 
 Please cite `fairpub` as:

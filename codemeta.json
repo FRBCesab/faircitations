@@ -41,6 +41,32 @@
       "@id": "https://orcid.org/0000-0002-5537-5294"
     }
   ],
+  "softwareSuggestions": [
+    {
+      "@type": "SoftwareApplication",
+      "identifier": "knitr",
+      "name": "knitr",
+      "provider": {
+        "@id": "https://cran.r-project.org",
+        "@type": "Organization",
+        "name": "Comprehensive R Archive Network (CRAN)",
+        "url": "https://cran.r-project.org"
+      },
+      "sameAs": "https://CRAN.R-project.org/package=knitr"
+    },
+    {
+      "@type": "SoftwareApplication",
+      "identifier": "rmarkdown",
+      "name": "rmarkdown",
+      "provider": {
+        "@id": "https://cran.r-project.org",
+        "@type": "Organization",
+        "name": "Comprehensive R Archive Network (CRAN)",
+        "url": "https://cran.r-project.org"
+      },
+      "sameAs": "https://CRAN.R-project.org/package=rmarkdown"
+    }
+  ],
   "softwareRequirements": {
     "1": {
       "@type": "SoftwareApplication",
@@ -74,7 +100,7 @@
     },
     "SystemRequirements": null
   },
-  "fileSize": "273.97KB",
+  "fileSize": "274.361KB",
   "citation": [
     {
       "@type": "SoftwareSourceCode",
@@ -91,5 +117,6 @@
     }
   ],
   "releaseNotes": "https://github.com/frbcesab/fairpub/blob/master/NEWS.md",
+  "readme": "https://github.com/FRBCesab/fairpub/blob/main/README.md",
   "contIntegration": ["https://github.com/frbcesab/fairpub/actions/workflows/R-CMD-check.yaml", "https://github.com/frbcesab/fairpub/actions/workflows/pkgdown.yaml"]
 }
