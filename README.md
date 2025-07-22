@@ -5,6 +5,9 @@
 
 <!-- badges: start -->
 
+![Package](https://img.shields.io/static/v1?message=Package&logo=r&labelColor=5c5c5c&color=yellowgreen&logoColor=white&label=%20)
+![Lifecycle
+Maturing](https://img.shields.io/badge/Lifecycle-Maturing-007EC6)
 [![CRAN
 status](https://www.r-pkg.org/badges/version/faircitations)](https://CRAN.R-project.org/package=faircitations)
 [![R CMD
@@ -15,12 +18,10 @@ Check](https://github.com/frbcesab/faircitations/actions/workflows/R-CMD-check.y
 <!-- badges: end -->
 
 <p align="left">
-
 • <a href="#overview">Overview</a><br> •
 <a href="#features">Features</a><br> •
 <a href="#installation">Installation</a><br> •
 <a href="#get-started">Get started</a><br> •
-<a href="#long-form-documentations">Long-form documentations</a><br> •
 <a href="#citation">Citation</a><br> •
 <a href="#contributing">Contributing</a><br> •
 <a href="#acknowledgments">Acknowledgments</a><br> •
@@ -29,12 +30,43 @@ Check](https://github.com/frbcesab/faircitations/actions/workflows/R-CMD-check.y
 
 ## Overview
 
-The R package `faircitations`… **{{ DESCRIBE YOUR PACKAGE }}**
+Scientific journals operate over a broad spectrum of publishing
+strategies, from strictly for-profit, to non-profit, and in-between
+business models (e.g.  for-profit but academic friendly journals).
+Scientific publishing is increasingly dominated by for-profit journals,
+many of which attract prestige and submissions through high impact
+factors. In contrast, non-profit journals – those that reinvest revenue
+into the academic community – struggle to maintain visibility despite
+offering more equitable publishing models.
+
+To help rebalance this inequity, Beck *et al.* (in revision) propose a
+soft-power, low-risk strategy: strategic citation. By deliberately
+choosing to cite relevant articles from non-profit journals when
+multiple references would be equally valid, researchers can contribute
+to increasing their visibility and future impact factor.
+
+The aim of the R package `faircitations` is to provide a user-friendly
+way to compute the non-profit and academic friendly ratio of the
+references list before submitting a manuscript for peer review.
 
 ## Features
 
-The main purpose of `faircitations` is to… **{{ DESCRIBE THE MAIN
-FEATURES }}**
+`faircitations` reads a bibliographic file (e.g. BibTeX) to extract
+article DOI. Then it queries the [OpenAlex](https://openalex.org)
+bibliographic database to retrieve journal names. Finally it uses the
+[DAFNEE database](https://dafnee.isem-evolution.fr/) that provides the
+business model and the academic friendly status of several journals in
+the field of Ecology and Evolution to compute the non-profit and
+academic friendly ratio.
+
+Currently two functions are implemented:
+
+- the
+  [`citation_ratio()`](https://frbcesab.github.io/faircitations/reference/citation_ratio.html)
+  function helps user to compute citation ratios,
+- the
+  [`get_dafnee_journals()`](https://frbcesab.github.io/faircitations/reference/get_dafnee_journals.html)
+  function lists the available DAFNEE journals.
 
 ## Installation
 
@@ -42,12 +74,12 @@ You can install the development version from
 [GitHub](https://github.com/) with:
 
 ``` r
-## Install < remotes > package (if not already installed) ----
+# Install < remotes > package (if not already installed) ----
 if (!requireNamespace("remotes", quietly = TRUE)) {
   install.packages("remotes")
 }
 
-## Install < faircitations > from GitHub ----
+# Install < faircitations > from GitHub ----
 remotes::install_github("frbcesab/faircitations")
 ```
 
@@ -64,22 +96,12 @@ For an overview of the main features of `faircitations`, please read the
 started](https://frbcesab.github.io/faircitations/articles/faircitations.html)
 vignette.
 
-## Long-form documentations
-
-`faircitations` provides **{{ NUMBER OF VIGNETTES }}** vignettes to
-learn more about the package:
-
-- the [Get
-  started](https://frbcesab.github.io/faircitations/articles/faircitations.html)
-  vignette describes the core features of the package
-- **{{ LIST ADDITIONAL VIGNETTES }}**
-
 ## Citation
 
 Please cite `faircitations` as:
 
-> Casajus Nicolas (2025) faircitations: An R package to **{{ TITLE }}**.
-> R package version 0.0.0.9000.
+> Casajus Nicolas (2025) faircitations: How fair are you when you cite
+> scientific works? R package version 0.0.0.9000.
 > <https://github.com/frbcesab/faircitations/>
 
 ## Contributing
@@ -95,8 +117,15 @@ By contributing to this project, you agree to abide by its terms.
 
 ## Acknowledgments
 
-**{{ OPTIONAL SECTION }}**
+This project is a collaborative work among
+[FRB-CESAB](https://www.fondationbiodiversite.fr/en/about-the-foundation/le-cesab/)
+scientific team.
+
+We want to thanks the [DAFNEE team](https://dafnee.isem-evolution.fr/)
+for his incredible work in gathering information about scientific
+journals.
 
 ## References
 
-**{{ OPTIONAL SECTION }}**
+Beck M *et al.* (in revision) Strategic citations for a fairer academic
+landscape. Submitted to Proc B - Biological Science Practices.
