@@ -47,7 +47,8 @@ to increasing their visibility and future impact factor.
 
 The aim of the R package `faircitations` is to provide a user-friendly
 way to compute the non-profit and academic friendly ratio of the
-references list before submitting a manuscript for peer review.
+bibliographic reference list before submitting a manuscript for peer
+review.
 
 ## Features
 
@@ -91,10 +92,29 @@ library("faircitations")
 
 ## Get started
 
-For an overview of the main features of `faircitations`, please read the
-[Get
-started](https://frbcesab.github.io/faircitations/articles/faircitations.html)
-vignette.
+The main function of `faircitations` is
+[`citation_ratio()`](https://frbcesab.github.io/faircitations/reference/citation_ratio.html).
+From a vector of article DOI, this function will report the following
+metrics:
+
+``` r
+citation_ratio(doi = list_of_doi)
+```
+
+    ## $summary
+    ##                                     metric value
+    ##                           Total references    33
+    ##                        References with DOI    33
+    ##                    Deduplicated references    33
+    ##               References found in OpenAlex    30
+    ##                 References found in DAFNEE    10
+    ##     Non-profit & acad. friendly references     9
+    ##     For-profit & acad. friendly references     1
+    ## For-profit & non-acad. friendly references     0
+    ## 
+    ## $ratios
+    ## Non-profit & acad. friendly  For-profit & acad. friendly  For-profit & non-acad. friendly 
+    ##                         0.9                          0.1                              0.0 
 
 ## Citation
 
