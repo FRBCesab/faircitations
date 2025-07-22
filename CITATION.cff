@@ -70,7 +70,7 @@ references:
   title: RefManageR
   abstract: 'RefManageR: Straightforward ''BibTeX'' and ''BibLaTeX'' Bibliography
     Management'
-  notes: Suggests
+  notes: Imports
   url: https://github.com/ropensci/RefManageR/
   repository: https://CRAN.R-project.org/package=RefManageR
   authors:
