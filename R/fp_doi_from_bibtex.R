@@ -21,9 +21,9 @@
 #' )
 #'
 #' # Extract DOI from BibTeX ----
-#' doi_from_bibtex(filename)
+#' fp_doi_from_bibtex(filename)
 
-doi_from_bibtex <- function(bibtex) {
+fp_doi_from_bibtex <- function(bibtex) {
   ## Check args ----
 
   if (missing(bibtex)) {
@@ -67,5 +67,5 @@ doi_from_bibtex <- function(bibtex) {
 
   ## Clean DOI ----
 
-  clean_doi(dois)
+  fp_clean_doi(dois)
 }

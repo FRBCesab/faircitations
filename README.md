@@ -63,10 +63,10 @@ academic friendly ratio.
 Currently two functions are implemented:
 
 - the
-  [`compute_ratio()`](https://frbcesab.github.io/faircitations/reference/compute_ratio.html)
+  [`fp_compute_ratio()`](https://frbcesab.github.io/faircitations/reference/fp_compute_ratio.html)
   function helps user to compute citation ratios,
 - the
-  [`get_dafnee_journals()`](https://frbcesab.github.io/faircitations/reference/get_dafnee_journals.html)
+  [`fp_get_dafnee_journals()`](https://frbcesab.github.io/faircitations/reference/fp_get_dafnee_journals.html)
   function lists the available DAFNEE journals.
 
 ## Installation
@@ -93,12 +93,12 @@ library("faircitations")
 ## Get started
 
 The main function of `faircitations` is
-[`compute_ratio()`](https://frbcesab.github.io/faircitations/reference/compute_ratio.html).
+[`fp_compute_ratio()`](https://frbcesab.github.io/faircitations/reference/fp_compute_ratio.html).
 From a vector of article DOI, this function will report the following
 metrics:
 
 ``` r
-compute_ratio(doi = list_of_doi)
+fp_compute_ratio(doi = list_of_doi)
 ```
 
     ## $summary
