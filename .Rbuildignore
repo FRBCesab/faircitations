@@ -12,3 +12,4 @@
 ^\.here$
 ^air\.toml$
 ^\.vscode$
+^NEWS\.md$
