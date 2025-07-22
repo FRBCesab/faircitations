@@ -80,8 +80,11 @@ no)</p></li>
     <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span><span class="co"># List DAFNEE journals in faircitations ----</span></span></span>
 <span class="r-in"><span><span class="va">journals</span> <span class="op">&lt;-</span> <span class="fu">get_dafnee_journals</span><span class="op">(</span><span class="op">)</span></span></span>
 <span class="r-in"><span></span></span>
+<span class="r-in"><span><span class="co"># Number of journals ----</span></span></span>
 <span class="r-in"><span><span class="fu"><a href="https://rdrr.io/r/base/nrow.html" class="external-link">nrow</a></span><span class="op">(</span><span class="va">journals</span><span class="op">)</span></span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> [1] 291</span>
+<span class="r-in"><span></span></span>
+<span class="r-in"><span><span class="co"># Preview of the outputs ----</span></span></span>
 <span class="r-in"><span><span class="fu"><a href="https://rdrr.io/r/utils/head.html" class="external-link">head</a></span><span class="op">(</span><span class="va">journals</span><span class="op">)</span></span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>                                       journal business_model academic_friendly</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 1                  Cities and the Environment     Non-profit               Yes</span>
