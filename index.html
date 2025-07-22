@@ -5,13 +5,13 @@
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>How Fair Are You When You Cite Scientific Works? • faircitations</title>
+<title>How Fair Are You When You Publish/Cite Scientific Works? • fairpub</title>
 <!-- jquery --><script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js" integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script><!-- Bootstrap --><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.4.1/css/bootstrap.min.css" integrity="sha256-bZLfwXAP04zRMK2BjiO8iu9pf4FbLqX6zitd+tIvLhE=" crossorigin="anonymous">
 <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.4.1/js/bootstrap.min.js" integrity="sha256-nuL8/2cJ5NDSSwnKD8VqreErSWHtnEP9E7AySL+1ev4=" crossorigin="anonymous"></script><!-- bootstrap-toc --><link rel="stylesheet" href="bootstrap-toc.css">
 <script src="bootstrap-toc.js"></script><!-- Font Awesome icons --><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css" integrity="sha256-mmgLkCYLUQbXn0B1SRqzHar6dCnv9oZFPEC1g1cwlkk=" crossorigin="anonymous">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/v4-shims.min.css" integrity="sha256-wZjR52fzng1pJHwx4aV2AO3yyTOXrcDW7jBpJtTwVxw=" crossorigin="anonymous">
 <!-- clipboard.js --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js" integrity="sha256-inc5kl9MA1hkeYUt+EC3BhlIgyp/2jDIyBLS6k3UxPI=" crossorigin="anonymous"></script><!-- headroom.js --><script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.11.0/headroom.min.js" integrity="sha256-AsUX4SJE1+yuDu5+mAVzJbuYNPHj/WroHuZ8Ir/CkE0=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.11.0/jQuery.headroom.min.js" integrity="sha256-ZX/yNShbjqsohH1k95liqY9Gd8uOiE1S4vZc+9KQ1K4=" crossorigin="anonymous"></script><!-- pkgdown --><link href="pkgdown.css" rel="stylesheet">
-<script src="pkgdown.js"></script><meta property="og:title" content="How Fair Are You When You Cite Scientific Works?">
+<script src="pkgdown.js"></script><meta property="og:title" content="How Fair Are You When You Publish/Cite Scientific Works?">
 <meta property="og:description" content="Provides a user-friendly way to compute the non-profit and academic friendly ratio of the bibliographic reference list before submitting a manuscript for peer review.">
 <!-- mathjax --><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js" integrity="sha256-nvJJv9wWKEm88qvoQl9ekL2J+k/RWIsaSScxxlsrv8k=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/config/TeX-AMS-MML_HTMLorMML.js" integrity="sha256-84DKXVJXs0/F8OTMzX4UR909+jtl4G7SPypPavF+GfA=" crossorigin="anonymous"></script><!--[if lt IE 9]>
 <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
@@ -32,7 +32,7 @@
         <span class="icon-bar"></span>
       </button>
       <span class="navbar-brand">
-        <a class="navbar-link" href="index.html">faircitations</a>
+        <a class="navbar-link" href="index.html">fairpub</a>
         <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="">0.0.0.9000</span>
       </span>
     </div>
@@ -48,7 +48,7 @@
       </ul>
 <ul class="nav navbar-nav navbar-right">
 <li>
-  <a href="https://github.com/frbcesab/faircitations/" class="external-link">
+  <a href="https://github.com/frbcesab/fairpub/" class="external-link">
     <span class="fab fa-github fa-lg"></span>
 
   </a>
@@ -66,7 +66,7 @@
       </header><div class="row">
   <div class="contents col-md-9">
 <div class="section level1">
-<div class="page-header"><h1 id="faircitations-">faircitations <img src="reference/figures/package-sticker.png" align="right" style="float:right; height:120px;"><a class="anchor" aria-label="anchor" href="#faircitations-"></a>
+<div class="page-header"><h1 id="fairpub-">fairpub <img src="reference/figures/package-sticker.png" align="right" style="float:right; height:120px;"><a class="anchor" aria-label="anchor" href="#fairpub-"></a>
 </h1></div>
 <!-- badges: start -->
 
@@ -78,16 +78,16 @@
 </h2>
 <p>Scientific journals operate over a broad spectrum of publishing strategies, from strictly for-profit, to non-profit, and in-between business models (e.g.  for-profit but academic friendly journals). Scientific publishing is increasingly dominated by for-profit journals, many of which attract prestige and submissions through high impact factors. In contrast, non-profit journals – those that reinvest revenue into the academic community – struggle to maintain visibility despite offering more equitable publishing models.</p>
 <p>To help rebalance this inequity, Beck <em>et al.</em> (in revision) propose a soft-power, low-risk strategy: strategic citation. By deliberately choosing to cite relevant articles from non-profit journals when multiple references would be equally valid, researchers can contribute to increasing their visibility and future impact factor.</p>
-<p>The aim of the R package <code>faircitations</code> is to provide a user-friendly way to compute the non-profit and academic friendly ratio of the bibliographic reference list before submitting a manuscript for peer review.</p>
+<p>The aim of the R package <code>fairpub</code> is to provide a user-friendly way to compute the non-profit and academic friendly ratio of the bibliographic reference list before submitting a manuscript for peer review.</p>
 </div>
 <div class="section level2">
 <h2 id="features">Features<a class="anchor" aria-label="anchor" href="#features"></a>
 </h2>
-<p><code>faircitations</code> reads a bibliographic file (e.g. BibTeX) to extract article DOI. Then it queries the <a href="https://openalex.org" class="external-link">OpenAlex</a> bibliographic database to retrieve journal names. Finally it uses the <a href="https://dafnee.isem-evolution.fr/" class="external-link">DAFNEE database</a> that provides the business model and the academic friendly status of several journals in the field of Ecology and Evolution to compute the non-profit and academic friendly ratio.</p>
+<p><code>fairpub</code> reads a bibliographic file (e.g. BibTeX) to extract article DOI. Then it queries the <a href="https://openalex.org" class="external-link">OpenAlex</a> bibliographic database to retrieve journal names. Finally it uses the <a href="https://dafnee.isem-evolution.fr/" class="external-link">DAFNEE database</a> that provides the business model and the academic friendly status of several journals in the field of Ecology and Evolution to compute the non-profit and academic friendly ratio.</p>
 <p>Currently two functions are implemented:</p>
 <ul>
-<li>the <a href="https://frbcesab.github.io/faircitations/reference/fp_compute_ratio.html" class="external-link"><code>fp_compute_ratio()</code></a> function helps user to compute citation ratios,</li>
-<li>the <a href="https://frbcesab.github.io/faircitations/reference/fp_get_dafnee_journals.html" class="external-link"><code>fp_get_dafnee_journals()</code></a> function lists the available DAFNEE journals.</li>
+<li>the <a href="https://frbcesab.github.io/fairpub/reference/fp_compute_ratio.html" class="external-link"><code>fp_compute_ratio()</code></a> function helps user to compute citation ratios,</li>
+<li>the <a href="https://frbcesab.github.io/fairpub/reference/fp_get_dafnee_journals.html" class="external-link"><code>fp_get_dafnee_journals()</code></a> function lists the available DAFNEE journals.</li>
 </ul>
 </div>
 <div class="section level2">
@@ -100,16 +100,16 @@
 <span>  <span class="fu"><a href="https://rdrr.io/r/utils/install.packages.html" class="external-link">install.packages</a></span><span class="op">(</span><span class="st">"remotes"</span><span class="op">)</span></span>
 <span><span class="op">}</span></span>
 <span></span>
-<span><span class="co"># Install &lt; faircitations &gt; from GitHub ----</span></span>
-<span><span class="fu">remotes</span><span class="fu">::</span><span class="fu">install_github</span><span class="op">(</span><span class="st">"frbcesab/faircitations"</span><span class="op">)</span></span></code></pre></div>
-<p>Then you can attach the package <code>faircitations</code>:</p>
+<span><span class="co"># Install &lt; fairpub &gt; from GitHub ----</span></span>
+<span><span class="fu">remotes</span><span class="fu">::</span><span class="fu">install_github</span><span class="op">(</span><span class="st">"frbcesab/fairpub"</span><span class="op">)</span></span></code></pre></div>
+<p>Then you can attach the package <code>fairpub</code>:</p>
 <div class="sourceCode" id="cb2"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="st"><a href="https://github.com/frbcesab/faircitations" class="external-link">"faircitations"</a></span><span class="op">)</span></span></code></pre></div>
+<code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="st"><a href="https://github.com/frbcesab/fairpub" class="external-link">"fairpub"</a></span><span class="op">)</span></span></code></pre></div>
 </div>
 <div class="section level2">
 <h2 id="get-started">Get started<a class="anchor" aria-label="anchor" href="#get-started"></a>
 </h2>
-<p>The main function of <code>faircitations</code> is <a href="https://frbcesab.github.io/faircitations/reference/fp_compute_ratio.html" class="external-link"><code>fp_compute_ratio()</code></a>. From a vector of article DOI, this function will report the following metrics:</p>
+<p>The main function of <code>fairpub</code> is <a href="https://frbcesab.github.io/fairpub/reference/fp_compute_ratio.html" class="external-link"><code>fp_compute_ratio()</code></a>. From a vector of article DOI, this function will report the following metrics:</p>
 <div class="sourceCode" id="cb3"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="reference/fp_compute_ratio.html">fp_compute_ratio</a></span><span class="op">(</span>doi <span class="op">=</span> <span class="va">list_of_doi</span><span class="op">)</span></span></code></pre></div>
 <div class="sourceCode" id="cb4"><pre class="sourceCode R"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" tabindex="-1"></a><span class="do">## $summary</span></span>
@@ -130,16 +130,16 @@
 <div class="section level2">
 <h2 id="citation">Citation<a class="anchor" aria-label="anchor" href="#citation"></a>
 </h2>
-<p>Please cite <code>faircitations</code> as:</p>
+<p>Please cite <code>fairpub</code> as:</p>
 <blockquote>
-<p>Casajus Nicolas (2025) faircitations: How fair are you when you cite scientific works? R package version 0.0.1. <a href="https://github.com/frbcesab/faircitations/" class="external-link uri">https://github.com/frbcesab/faircitations/</a></p>
+<p>Casajus Nicolas (2025) fairpub: How fair are you when you cite scientific works? R package version 0.0.1. <a href="https://github.com/frbcesab/fairpub/" class="external-link uri">https://github.com/frbcesab/fairpub/</a></p>
 </blockquote>
 </div>
 <div class="section level2">
 <h2 id="contributing">Contributing<a class="anchor" aria-label="anchor" href="#contributing"></a>
 </h2>
-<p>All types of contributions are encouraged and valued. For more information, check out our <a href="https://github.com/frbcesab/faircitations/blob/main/CONTRIBUTING.md" class="external-link">Contributor Guidelines</a>.</p>
-<p>Please note that the <code>faircitations</code> project is released with a <a href="https://contributor-covenant.org/version/2/1/CODE_OF_CONDUCT.html" class="external-link">Contributor Code of Conduct</a>. By contributing to this project, you agree to abide by its terms.</p>
+<p>All types of contributions are encouraged and valued. For more information, check out our <a href="https://github.com/frbcesab/fairpub/blob/main/CONTRIBUTING.md" class="external-link">Contributor Guidelines</a>.</p>
+<p>Please note that the <code>fairpub</code> project is released with a <a href="https://contributor-covenant.org/version/2/1/CODE_OF_CONDUCT.html" class="external-link">Contributor Code of Conduct</a>. By contributing to this project, you agree to abide by its terms.</p>
 </div>
 <div class="section level2">
 <h2 id="acknowledgments">Acknowledgments<a class="anchor" aria-label="anchor" href="#acknowledgments"></a>
@@ -159,8 +159,8 @@
     <div class="links">
 <h2 data-toc-skip>Links</h2>
 <ul class="list-unstyled">
-<li><a href="https://github.com/frbcesab/faircitations/" class="external-link">Browse source code</a></li>
-<li><a href="https://github.com/frbcesab/faircitations/issues" class="external-link">Report a bug</a></li>
+<li><a href="https://github.com/frbcesab/fairpub/" class="external-link">Browse source code</a></li>
+<li><a href="https://github.com/frbcesab/fairpub/issues" class="external-link">Report a bug</a></li>
 </ul>
 </div>
 
@@ -183,7 +183,7 @@
 <div class="citation">
 <h2 data-toc-skip>Citation</h2>
 <ul class="list-unstyled">
-<li><a href="authors.html#citation">Citing faircitations</a></li>
+<li><a href="authors.html#citation">Citing fairpub</a></li>
 </ul>
 </div>
 
@@ -197,9 +197,9 @@
 <div class="dev-status">
 <h2 data-toc-skip>Dev status</h2>
 <ul class="list-unstyled">
-<li><a href="https://CRAN.R-project.org/package=faircitations" class="external-link"><img src="https://www.r-pkg.org/badges/version/faircitations" alt="CRAN status"></a></li>
-<li><a href="https://github.com/frbcesab/faircitations/actions/workflows/R-CMD-check.yaml" class="external-link"><img src="https://github.com/frbcesab/faircitations/actions/workflows/R-CMD-check.yaml/badge.svg" alt="R CMD Check"></a></li>
-<li><a href="https://github.com/frbcesab/faircitations/actions/workflows/pkgdown.yaml" class="external-link"><img src="https://github.com/frbcesab/faircitations/actions/workflows/pkgdown.yaml/badge.svg" alt="Website"></a></li>
+<li><a href="https://CRAN.R-project.org/package=fairpub" class="external-link"><img src="https://www.r-pkg.org/badges/version/fairpub" alt="CRAN status"></a></li>
+<li><a href="https://github.com/frbcesab/fairpub/actions/workflows/R-CMD-check.yaml" class="external-link"><img src="https://github.com/frbcesab/fairpub/actions/workflows/R-CMD-check.yaml/badge.svg" alt="R CMD Check"></a></li>
+<li><a href="https://github.com/frbcesab/fairpub/actions/workflows/pkgdown.yaml" class="external-link"><img src="https://github.com/frbcesab/fairpub/actions/workflows/pkgdown.yaml/badge.svg" alt="Website"></a></li>
 <li><a href="https://choosealicense.com/licenses/gpl-2.0/" class="external-link"><img src="https://img.shields.io/badge/License-GPL%20%28%3E%3D%202%29-blue.svg" alt="License: GPL (&gt;= 2)"></a></li>
 </ul>
 </div>
