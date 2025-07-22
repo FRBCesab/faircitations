@@ -20,9 +20,6 @@ Depends:
 Imports:
     openalexR
 Suggests: 
-    knitr,
-    RefManageR,
-    rmarkdown
-VignetteBuilder: knitr
+    RefManageR
 Roxygen: list(markdown = TRUE)
 RoxygenNote: 7.3.2
