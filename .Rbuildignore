@@ -10,3 +10,5 @@
 ^_pkgdown\.yaml$
 ^CITATION\.cff$
 ^\.here$
+^air\.toml$
+^\.vscode$
