@@ -19,8 +19,7 @@ LazyData: true
 Depends: 
     R (>= 3.5)
 Imports:
-    openalexR
-Suggests: 
+    openalexR,
     RefManageR
 Roxygen: list(markdown = TRUE)
 RoxygenNote: 7.3.2
