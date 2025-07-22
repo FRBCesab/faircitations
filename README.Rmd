@@ -130,7 +130,7 @@ fp_compute_ratio(doi = list_of_doi)
 ##                         0.9                          0.1                              0.0 
 ```
 
-Visit the [Get started](https://frbcesab.github.io/fairpub/articles/fairpub.html) vignette for other usage of the `fairpub` package.
+Visit the [Get started](https://frbcesab.github.io/fairpub/articles/fairpub.html) vignette for a complete usage of the `fairpub` package.
 
 
 
