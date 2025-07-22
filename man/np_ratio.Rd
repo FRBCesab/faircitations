@@ -2,19 +2,51 @@
 % Please edit documentation in R/np_ratio.R
 \name{np_ratio}
 \alias{np_ratio}
-\title{Compute the non-profit ratio on a list of references}
+\title{Non profit & academic friendly ratio of citations}
 \usage{
 np_ratio(doi)
 }
 \arguments{
-\item{doi}{a \code{character} vector of Digital Object Identifiers (DOI)}
+\item{doi}{a \code{character} vector of Digital Object Identifiers (DOI). Can
+contain \code{NA} (book, book chapter, etc.).}
 }
 \value{
-A \code{data.frame} with two columns: \code{metric} and \code{value} reporting
-different statistics.
+A \code{list} of two elements:
+\itemize{
+\item \code{summary}, a \code{data.frame} with two columns (\code{metric} and \code{value})
+reporting the following statistics:
+\itemize{
+\item number of total references (length of \code{doi} argument)
+\item number of references with DOI
+\item number of deduplicated references
+\item number of references found in the OpenAlex database
+\item number of references whose journal is indexed in the DAFNEE database
+\item number of non-profit and academic friendly references
+\item number of for-profit and academic friendly references
+\item number of for-profit and non academic friendly references
+}
+\item \code{ratios}, a vector of three ratios:
+\itemize{
+\item non-profit and academic friendly ratio
+\item for-profit and academic friendly ratio
+\item for-profit and non academic friendly ratio
+}
+}
 }
 \description{
-...
+Scientific journals operate over a broad spectrum of publishing strategies,
+from strictly for-profit, to non-profit, and in-between business models
+(e.g. for-profit but academic friendly journals).
+
+From a list of references, this function computes three citation ratios:
+the proportion of non-profit citations, the proportion of for-profit and
+academic friendly citations, and the proportion of for-profit and
+non-academic friendly citations (Beck et al. 2025).
+
+It uses the OpenAlex bibliographic database (\url{https://openalex.org}) to
+retrieve journal names from article DOI and the DAFNEE database
+(\url{https://dafnee.isem-evolution.fr/}) to get the business model and the
+academic friendly status of journals.
 }
 \examples{
 # Import a BiBTex file (provided example) ----
@@ -26,13 +58,17 @@ filename <- system.file(
 refs <- RefManageR::ReadBib(filename)
 
 length(refs)
-refs[1:5]
+refs[1:2]
 
 # Extract DOI ----
 doi_list <- unlist(refs$"doi")
 names(doi_list) <- NULL
 doi_list
 
-# Compute NP ratio ----
+# Compute citation ratios ----
 np_ratio(doi_list)
+}
+\references{
+Beck M et al. (2025) Strategic citations for a fairer academic
+landscape. Submitted to Proc B - Biological Science Practices.
 }

@@ -1,14 +1,45 @@
-#' Compute the non-profit ratio on a list of references
+#' Non profit & academic friendly ratio of citations
 #'
 #' @description
-#' ...
+#' Scientific journals operate over a broad spectrum of publishing strategies,
+#' from strictly for-profit, to non-profit, and in-between business models
+#' (e.g. for-profit but academic friendly journals).
 #'
-#' @param doi a `character` vector of Digital Object Identifiers (DOI)
+#' From a list of references, this function computes three citation ratios:
+#' the proportion of non-profit citations, the proportion of for-profit and
+#' academic friendly citations, and the proportion of for-profit and
+#' non-academic friendly citations (Beck et al. 2025).
 #'
-#' @return A `data.frame` with two columns: `metric` and `value` reporting
-#' different statistics.
+#' It uses the OpenAlex bibliographic database (<https://openalex.org>) to
+#' retrieve journal names from article DOI and the DAFNEE database
+#' (<https://dafnee.isem-evolution.fr/>) to get the business model and the
+#' academic friendly status of journals.
+#'
+#' @param doi a `character` vector of Digital Object Identifiers (DOI). Can
+#'   contain `NA` (book, book chapter, etc.).
+#'
+#' @return A `list` of two elements:
+#'
+#'   - `summary`, a `data.frame` with two columns (`metric` and `value`)
+#'   reporting the following statistics:
+#'     - number of total references (length of `doi` argument)
+#'     - number of references with DOI
+#'     - number of deduplicated references
+#'     - number of references found in the OpenAlex database
+#'     - number of references whose journal is indexed in the DAFNEE database
+#'     - number of non-profit and academic friendly references
+#'     - number of for-profit and academic friendly references
+#'     - number of for-profit and non academic friendly references
+#'
+#'   - `ratios`, a vector of three ratios:
+#'     - non-profit and academic friendly ratio
+#'     - for-profit and academic friendly ratio
+#'     - for-profit and non academic friendly ratio
 #'
 #' @export
+#'
+#' @references Beck M et al. (2025) Strategic citations for a fairer academic
+#'   landscape. Submitted to Proc B - Biological Science Practices.
 #'
 #' @examples
 #' # Import a BiBTex file (provided example) ----
@@ -20,14 +51,14 @@
 #' refs <- RefManageR::ReadBib(filename)
 #'
 #' length(refs)
-#' refs[1:5]
+#' refs[1:2]
 #'
 #' # Extract DOI ----
 #' doi_list <- unlist(refs$"doi")
 #' names(doi_list) <- NULL
 #' doi_list
 #'
-#' # Compute NP ratio ----
+#' # Compute citation ratios ----
 #' np_ratio(doi_list)
 
 np_ratio <- function(doi) {
