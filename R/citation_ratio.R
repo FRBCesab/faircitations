@@ -127,6 +127,8 @@ citation_ratio <- function(doi) {
   ## Clean DOI ----
 
   doi <- gsub("https://doi.org/", "", doi)
+  doi <- gsub("doi:", "", doi)
+  doi <- gsub("\\s", "", doi)
   doi <- tolower(doi)
 
   ## Remove duplicated references ----
