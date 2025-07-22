@@ -121,7 +121,7 @@ citation_ratio(doi = list_of_doi)
 Please cite `faircitations` as:
 
 > Casajus Nicolas (2025) faircitations: How fair are you when you cite
-> scientific works? R package version 0.0.0.9000.
+> scientific works? R package version 0.0.1.
 > <https://github.com/frbcesab/faircitations/>
 
 ## Contributing

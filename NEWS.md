@@ -1,1 +1,3 @@
-# faircitations 0.0.0.9000
+# faircitations 0.0.1
+
+First stable release.

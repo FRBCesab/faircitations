@@ -76,7 +76,7 @@
     },
     "SystemRequirements": null
   },
-  "fileSize": "271.79KB",
+  "fileSize": "271.805KB",
   "citation": [
     {
       "@type": "SoftwareSourceCode",
@@ -87,9 +87,9 @@
           "name": "Casajus Nicolas"
         }
       ],
-      "name": "faircitations: {An} {R} package to ...",
+      "name": "faircitations: How fair are you when you cite scientific works?",
       "url": "https://github.com/frbcesab/faircitations",
-      "description": "R package version 0.0.0.9000"
+      "description": "R package version 0.0.1"
     }
   ],
   "releaseNotes": "https://github.com/frbcesab/faircitations/blob/master/NEWS.md",
