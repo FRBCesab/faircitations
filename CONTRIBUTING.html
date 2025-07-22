@@ -28,6 +28,9 @@
 <li>
   <a href="reference/index.html">Reference</a>
 </li>
+<li>
+  <a href="news/index.html">Changelog</a>
+</li>
       </ul><ul class="nav navbar-nav navbar-right"><li>
   <a href="https://github.com/frbcesab/faircitations/" class="external-link">
     <span class="fab fa-github fa-lg"></span>
@@ -62,11 +65,11 @@
 </ul></div>
 <div class="section level2">
 <h2 id="code-of-conduct">Code of conduct<a class="anchor" aria-label="anchor" href="#code-of-conduct"></a></h2>
-<p>This project is released with a <a href="https://github.com/frbcesab/faircitations/blob/main/CODE_OF_CONDUCT.md" class="external-link">Contributor Code of Conduct</a>. By participating, you are expected to uphold this code. Please report unacceptable behavior to <a href="mailto:rdev.nc@gmail.com" class="email">rdev.nc@gmail.com</a>.</p>
+<p>Please note that this package is released with a <a href="https://github.com/FRBCesab/faircitations/blob/main/CODE_OF_CONDUCT.md" class="external-link">Contributor Code of Conduct</a>. By contributing to this project, you agree to abide by its terms.</p>
 </div>
 <div class="section level2">
 <h2 id="style-guide">Style guide<a class="anchor" aria-label="anchor" href="#style-guide"></a></h2>
-<p>We use the <a href="https://style.tidyverse.org/" class="external-link">Tidyverse style guide</a> for writing R code. Functions are documented with the <a href="https://roxygen2.r-lib.org/articles/roxygen2.html" class="external-link">roxygen2</a> syntax. <code>faircitations</code> uses the <code>lower_snake_case</code>.</p>
+<p>We use the <a href="https://style.tidyverse.org/" class="external-link">Tidyverse style guide</a> for writing R code. You can install <a href="https://github.com/posit-dev/air" class="external-link">air</a> to automatically format your R code. Functions are documented with the <a href="https://roxygen2.r-lib.org/articles/roxygen2.html" class="external-link">roxygen2</a> syntax. <code>faircitations</code> uses the <code>lower_snake_case</code>.</p>
 </div>
 <div class="section level2">
 <h2 id="commit-messages">Commit messages<a class="anchor" aria-label="anchor" href="#commit-messages"></a></h2>
@@ -77,7 +80,7 @@
 <p>Before you ask a question, it is best to search for existing <a href="https://github.com/frbcesab/faircitations/issues" class="external-link">Issues</a> that might help you. In case you have found a suitable issue and still need clarification, you can write your question in this issue.</p>
 <p>If you then still feel the need to ask a question and need clarification, we recommend the following:</p>
 <ul><li>Open a new <a href="https://github.com/frbcesab/faircitations/issues/new" class="external-link">Issue</a>.</li>
-<li>Use the template <a href="https://github.com/frbcesab/faircitations/blob/main/.github/ISSUE_TEMPLATE/other_issue.md" class="external-link">other_issue.md</a>.</li>
+<li>Use the template <a href="https://github.com/frbcesab/faircitations/blob/master/.github/ISSUE_TEMPLATE/other_issue.md" class="external-link">other_issue.md</a>.</li>
 <li>Provide as much context as you can about what you’re running into.</li>
 <li>Provide project and platform versions (paste the output of <code><a href="https://rdrr.io/r/utils/sessionInfo.html" class="external-link">sessionInfo()</a></code>).</li>
 </ul><p>We will then take care of the issue as soon as possible.</p>
@@ -95,7 +98,7 @@
 <h3 id="how-do-i-submit-a-bug-report">How do I submit a bug report?<a class="anchor" aria-label="anchor" href="#how-do-i-submit-a-bug-report"></a></h3>
 <p>We use <a href="https://github.com/frbcesab/faircitations/issues" class="external-link">GitHub Issues</a> to track bugs and errors. If you run into an issue with the project:</p>
 <ul><li>Open a new <a href="https://github.com/frbcesab/faircitations/issues/new" class="external-link">Issue</a>.</li>
-<li>Use the template <a href="https://github.com/frbcesab/faircitations/blob/main/.github/ISSUE_TEMPLATE/bug_report.md" class="external-link">bug_report.md</a>.</li>
+<li>Use the template <a href="https://github.com/frbcesab/faircitations/blob/master/.github/ISSUE_TEMPLATE/bug_report.md" class="external-link">bug_report.md</a>.</li>
 <li>Explain the behavior you would expect and the actual behavior.</li>
 <li>Please provide as much context as possible and describe the <em>reproduction steps</em> that someone else can follow to recreate the issue on their own. This usually includes your code with a reproducible example.</li>
 </ul><p>We will then take care of the issue as soon as possible.</p>
@@ -113,7 +116,7 @@
 <h3 id="how-do-i-submit-a-feature-request">How do I submit a feature request?<a class="anchor" aria-label="anchor" href="#how-do-i-submit-a-feature-request"></a></h3>
 <p>Feature requests are tracked as <a href="https://github.com/frbcesab/faircitations/issues" class="external-link">GitHub Issues</a>.</p>
 <ul><li>Open a new <a href="https://github.com/frbcesab/faircitations/issues/new" class="external-link">Issue</a>.</li>
-<li>Use the template <a href="https://github.com/frbcesab/faircitations/blob/main/.github/ISSUE_TEMPLATE/feature_request.md" class="external-link">feature_request.md</a>.</li>
+<li>Use the template <a href="https://github.com/frbcesab/faircitations/blob/master/.github/ISSUE_TEMPLATE/feature_request.md" class="external-link">feature_request.md</a>.</li>
 <li>Provide a clear and descriptive title for the issue to identify the suggestion.</li>
 <li>Provide a step-by-step description of the suggested enhancement in as many details as possible.</li>
 <li>Explain why this enhancement would be useful to most <code>faircitations</code> users.</li>
@@ -128,7 +131,7 @@
 <ol style="list-style-type: decimal"><li>
 <a href="https://docs.github.com/en/get-started/quickstart/contributing-to-projects" class="external-link">Fork</a> this repository using the GitHub interface.</li>
 <li>
-<a href="https://docs.github.com/en/repositories/creating-and-managing-repositories/cloning-a-repository" class="external-link">Clone</a> your fork using <code>git clone fork-url</code> (replace <code>fork-url</code> by the URL of your fork). Alternatively, open RStudio IDE and create a New Project from Version Control.</li>
+<a href="https://docs.github.com/en/repositories/creating-and-managing-repositories/cloning-a-repository" class="external-link">Clone</a> your fork using <code>git clone fork-url</code> (replace <code>fork-url</code> by the URL of your fork). Alternatively, open RStudio IDE or Positron IDE and create a New Project from Version Control.</li>
 <li>Create a new branch w/ <code>git checkout -b branch-name</code> (replace <code>branch-name</code> by the name of your new branch).</li>
 <li>Make your contribution (see below for examples).</li>
 <li>Stage (<code>git add</code>) and commit (<code>git commit</code>) your changes as often as necessary</li>
