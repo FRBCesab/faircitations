@@ -24,17 +24,17 @@ maintainers and smooth out the experience for all involved.
 
 ## Code of conduct
 
-This project is released with a
-[Contributor Code of Conduct](https://github.com/frbcesab/faircitations/blob/main/CODE_OF_CONDUCT.md).
-By participating, you are expected to uphold this code. Please report 
-unacceptable behavior to <rdev.nc@gmail.com>.
+Please note that this package is released with a [Contributor
+Code of Conduct](https://github.com/FRBCesab/faircitations/blob/main/CODE_OF_CONDUCT.md). 
+By contributing to this project, you agree to abide by its terms.
 
 
 
 ## Style guide
 
 We use the [Tidyverse style guide](https://style.tidyverse.org/) for writing R 
-code. Functions are documented with the 
+code. You can install [air](https://github.com/posit-dev/air) to automatically 
+format your R code. Functions are documented with the 
 [roxygen2](https://roxygen2.r-lib.org/articles/roxygen2.html) syntax. 
 `faircitations` uses the `lower_snake_case`.
 
@@ -59,7 +59,7 @@ If you then still feel the need to ask a question and need clarification, we
 recommend the following:
 
 - Open a new [Issue](https://github.com/frbcesab/faircitations/issues/new).
-- Use the template [other_issue.md](https://github.com/frbcesab/faircitations/blob/main/.github/ISSUE_TEMPLATE/other_issue.md).
+- Use the template [other_issue.md](https://github.com/frbcesab/faircitations/blob/master/.github/ISSUE_TEMPLATE/other_issue.md).
 - Provide as much context as you can about what you're running into.
 - Provide project and platform versions (paste the output of `sessionInfo()`).
 
@@ -92,7 +92,7 @@ We use [GitHub Issues](https://github.com/frbcesab/faircitations/issues) to
 track bugs and errors. If you run into an issue with the project:
 
 - Open a new [Issue](https://github.com/frbcesab/faircitations/issues/new).
-- Use the template [bug_report.md](https://github.com/frbcesab/faircitations/blob/main/.github/ISSUE_TEMPLATE/bug_report.md).
+- Use the template [bug_report.md](https://github.com/frbcesab/faircitations/blob/master/.github/ISSUE_TEMPLATE/bug_report.md).
 - Explain the behavior you would expect and the actual behavior.
 - Please provide as much context as possible and describe the 
 *reproduction steps* that someone else can follow to recreate the issue on 
@@ -123,7 +123,7 @@ Feature requests are tracked as
 [GitHub Issues](https://github.com/frbcesab/faircitations/issues).
 
 - Open a new [Issue](https://github.com/frbcesab/faircitations/issues/new).
-- Use the template [feature_request.md](https://github.com/frbcesab/faircitations/blob/main/.github/ISSUE_TEMPLATE/feature_request.md).
+- Use the template [feature_request.md](https://github.com/frbcesab/faircitations/blob/master/.github/ISSUE_TEMPLATE/feature_request.md).
 - Provide a clear and descriptive title for the issue to identify the suggestion.
 - Provide a step-by-step description of the suggested enhancement in as 
 many details as possible.
@@ -147,7 +147,7 @@ to collaborate on this project:
 this repository using the GitHub interface.
 1. [Clone](https://docs.github.com/en/repositories/creating-and-managing-repositories/cloning-a-repository) 
 your fork using `git clone fork-url` (replace `fork-url` by the URL of your fork). 
-Alternatively, open RStudio IDE and create a New Project from Version Control.
+Alternatively, open RStudio IDE or Positron IDE and create a New Project from Version Control.
 1. Create a new branch w/ `git checkout -b branch-name` (replace `branch-name` 
 by the name of your new branch).
 1. Make your contribution (see below for examples).
