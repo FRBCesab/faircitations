@@ -9,7 +9,7 @@
 #' The `faircitations` package provides a selection of 291 DAFNEE journals and
 #' this function returns information about these journals
 #'
-#' @return A `data.frame` three columns:
+#' @return A `data.frame` with three columns:
 #'   - `journal`, the name of the journal
 #'   - `business_model`, the business model of the journal (non-profit or
 #'     for-profit)

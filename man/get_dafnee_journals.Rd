@@ -7,7 +7,7 @@
 get_dafnee_journals()
 }
 \value{
-A \code{data.frame} three columns:
+A \code{data.frame} with three columns:
 \itemize{
 \item \code{journal}, the name of the journal
 \item \code{business_model}, the business model of the journal (non-profit or
