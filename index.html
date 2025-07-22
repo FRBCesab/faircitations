@@ -40,9 +40,6 @@
     <div id="navbar" class="navbar-collapse collapse">
       <ul class="nav navbar-nav">
 <li>
-  <a href="articles/faircitations.html">Get started</a>
-</li>
-<li>
   <a href="reference/index.html">Reference</a>
 </li>
 <li>
@@ -81,7 +78,7 @@
 </h2>
 <p>Scientific journals operate over a broad spectrum of publishing strategies, from strictly for-profit, to non-profit, and in-between business models (e.g.  for-profit but academic friendly journals). Scientific publishing is increasingly dominated by for-profit journals, many of which attract prestige and submissions through high impact factors. In contrast, non-profit journals – those that reinvest revenue into the academic community – struggle to maintain visibility despite offering more equitable publishing models.</p>
 <p>To help rebalance this inequity, Beck <em>et al.</em> (in revision) propose a soft-power, low-risk strategy: strategic citation. By deliberately choosing to cite relevant articles from non-profit journals when multiple references would be equally valid, researchers can contribute to increasing their visibility and future impact factor.</p>
-<p>The aim of the R package <code>faircitations</code> is to provide a user-friendly way to compute the non-profit and academic friendly ratio of the references list before submitting a manuscript for peer review.</p>
+<p>The aim of the R package <code>faircitations</code> is to provide a user-friendly way to compute the non-profit and academic friendly ratio of the bibliographic reference list before submitting a manuscript for peer review.</p>
 </div>
 <div class="section level2">
 <h2 id="features">Features<a class="anchor" aria-label="anchor" href="#features"></a>
@@ -112,7 +109,23 @@
 <div class="section level2">
 <h2 id="get-started">Get started<a class="anchor" aria-label="anchor" href="#get-started"></a>
 </h2>
-<p>For an overview of the main features of <code>faircitations</code>, please read the <a href="https://frbcesab.github.io/faircitations/articles/faircitations.html" class="external-link">Get started</a> vignette.</p>
+<p>The main function of <code>faircitations</code> is <a href="https://frbcesab.github.io/faircitations/reference/citation_ratio.html" class="external-link"><code>citation_ratio()</code></a>. From a vector of article DOI, this function will report the following metrics:</p>
+<div class="sourceCode" id="cb3"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu"><a href="reference/citation_ratio.html">citation_ratio</a></span><span class="op">(</span>doi <span class="op">=</span> <span class="va">list_of_doi</span><span class="op">)</span></span></code></pre></div>
+<div class="sourceCode" id="cb4"><pre class="sourceCode R"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" tabindex="-1"></a><span class="do">## $summary</span></span>
+<span id="cb4-2"><a href="#cb4-2" tabindex="-1"></a><span class="do">##                                     metric value</span></span>
+<span id="cb4-3"><a href="#cb4-3" tabindex="-1"></a><span class="do">##                           Total references    33</span></span>
+<span id="cb4-4"><a href="#cb4-4" tabindex="-1"></a><span class="do">##                        References with DOI    33</span></span>
+<span id="cb4-5"><a href="#cb4-5" tabindex="-1"></a><span class="do">##                    Deduplicated references    33</span></span>
+<span id="cb4-6"><a href="#cb4-6" tabindex="-1"></a><span class="do">##               References found in OpenAlex    30</span></span>
+<span id="cb4-7"><a href="#cb4-7" tabindex="-1"></a><span class="do">##                 References found in DAFNEE    10</span></span>
+<span id="cb4-8"><a href="#cb4-8" tabindex="-1"></a><span class="do">##     Non-profit &amp; acad. friendly references     9</span></span>
+<span id="cb4-9"><a href="#cb4-9" tabindex="-1"></a><span class="do">##     For-profit &amp; acad. friendly references     1</span></span>
+<span id="cb4-10"><a href="#cb4-10" tabindex="-1"></a><span class="do">## For-profit &amp; non-acad. friendly references     0</span></span>
+<span id="cb4-11"><a href="#cb4-11" tabindex="-1"></a><span class="do">## </span></span>
+<span id="cb4-12"><a href="#cb4-12" tabindex="-1"></a><span class="do">## $ratios</span></span>
+<span id="cb4-13"><a href="#cb4-13" tabindex="-1"></a><span class="do">## Non-profit &amp; acad. friendly  For-profit &amp; acad. friendly  For-profit &amp; non-acad. friendly </span></span>
+<span id="cb4-14"><a href="#cb4-14" tabindex="-1"></a><span class="do">##                         0.9                          0.1                              0.0 </span></span></code></pre></div>
 </div>
 <div class="section level2">
 <h2 id="citation">Citation<a class="anchor" aria-label="anchor" href="#citation"></a>
