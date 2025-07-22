@@ -9,7 +9,9 @@ type: software
 license: GPL-2.0-or-later
 title: 'faircitations: How Fair Are You When You Cite Scientific Works?'
 version: 0.0.0.9000
-abstract: A paragraph providing a full description of the project (on several lines...)
+abstract: Provides a user-friendly way to compute the non-profit and academic friendly
+  ratio of the bibliographic reference list before submitting a manuscript for peer
+  review.
 authors:
 - family-names: Casajus
   given-names: Nicolas

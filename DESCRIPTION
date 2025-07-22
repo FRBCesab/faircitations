@@ -8,8 +8,9 @@ Authors@R: c(
            role    = c("aut", "cre", "cph"),
            email   = "rdev.nc@gmail.com",
            comment = c(ORCID = "0000-0002-5537-5294")))
-Description: A paragraph providing a full description of the project (on 
-    several lines...)
+Description: Provides a user-friendly way to compute the non-profit and academic
+    friendly ratio of the bibliographic reference list before submitting a 
+    manuscript for peer review.
 URL: https://github.com/frbcesab/faircitations
 BugReports: https://github.com/frbcesab/faircitations/issues
 License: GPL (>= 2)

@@ -6,7 +6,7 @@
 \alias{faircitations-package}
 \title{faircitations: How Fair Are You When You Cite Scientific Works?}
 \description{
-A paragraph providing a full description of the project (on several lines...)
+Provides a user-friendly way to compute the non-profit and academic friendly ratio of the bibliographic reference list before submitting a manuscript for peer review.
 }
 \seealso{
 Useful links:
