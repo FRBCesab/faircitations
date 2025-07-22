@@ -1,0 +1,122 @@
+{
+  "@context": "https://doi.org/10.5063/schema/codemeta-2.0",
+  "@type": "SoftwareSourceCode",
+  "identifier": "faircitations",
+  "description": "A paragraph providing a full description of the project (on several lines...)",
+  "name": "faircitations: How Fair Are You When You Cite Scientific Works?",
+  "codeRepository": "https://github.com/frbcesab/faircitations",
+  "issueTracker": "https://github.com/frbcesab/faircitations/issues",
+  "license": "https://spdx.org/licenses/GPL-2.0",
+  "version": "0.0.0.9000",
+  "programmingLanguage": {
+    "@type": "ComputerLanguage",
+    "name": "R",
+    "url": "https://r-project.org"
+  },
+  "runtimePlatform": "R version 4.5.1 (2025-06-13)",
+  "author": [
+    {
+      "@type": "Person",
+      "givenName": "Nicolas",
+      "familyName": "Casajus",
+      "email": "rdev.nc@gmail.com",
+      "@id": "https://orcid.org/0000-0002-5537-5294"
+    }
+  ],
+  "copyrightHolder": [
+    {
+      "@type": "Person",
+      "givenName": "Nicolas",
+      "familyName": "Casajus",
+      "email": "rdev.nc@gmail.com",
+      "@id": "https://orcid.org/0000-0002-5537-5294"
+    }
+  ],
+  "maintainer": [
+    {
+      "@type": "Person",
+      "givenName": "Nicolas",
+      "familyName": "Casajus",
+      "email": "rdev.nc@gmail.com",
+      "@id": "https://orcid.org/0000-0002-5537-5294"
+    }
+  ],
+  "softwareSuggestions": [
+    {
+      "@type": "SoftwareApplication",
+      "identifier": "knitr",
+      "name": "knitr",
+      "provider": {
+        "@id": "https://cran.r-project.org",
+        "@type": "Organization",
+        "name": "Comprehensive R Archive Network (CRAN)",
+        "url": "https://cran.r-project.org"
+      },
+      "sameAs": "https://CRAN.R-project.org/package=knitr"
+    },
+    {
+      "@type": "SoftwareApplication",
+      "identifier": "RefManageR",
+      "name": "RefManageR",
+      "provider": {
+        "@id": "https://cran.r-project.org",
+        "@type": "Organization",
+        "name": "Comprehensive R Archive Network (CRAN)",
+        "url": "https://cran.r-project.org"
+      },
+      "sameAs": "https://CRAN.R-project.org/package=RefManageR"
+    },
+    {
+      "@type": "SoftwareApplication",
+      "identifier": "rmarkdown",
+      "name": "rmarkdown",
+      "provider": {
+        "@id": "https://cran.r-project.org",
+        "@type": "Organization",
+        "name": "Comprehensive R Archive Network (CRAN)",
+        "url": "https://cran.r-project.org"
+      },
+      "sameAs": "https://CRAN.R-project.org/package=rmarkdown"
+    }
+  ],
+  "softwareRequirements": {
+    "1": {
+      "@type": "SoftwareApplication",
+      "identifier": "R",
+      "name": "R",
+      "version": ">= 3.5"
+    },
+    "2": {
+      "@type": "SoftwareApplication",
+      "identifier": "openalexR",
+      "name": "openalexR",
+      "provider": {
+        "@id": "https://cran.r-project.org",
+        "@type": "Organization",
+        "name": "Comprehensive R Archive Network (CRAN)",
+        "url": "https://cran.r-project.org"
+      },
+      "sameAs": "https://CRAN.R-project.org/package=openalexR"
+    },
+    "SystemRequirements": null
+  },
+  "fileSize": "269.226KB",
+  "citation": [
+    {
+      "@type": "SoftwareSourceCode",
+      "datePublished": "2025",
+      "author": [
+        {
+          "@type": "Organization",
+          "name": "Casajus Nicolas"
+        }
+      ],
+      "name": "faircitations: {An} {R} package to ...",
+      "url": "https://github.com/frbcesab/faircitations",
+      "description": "R package version 0.0.0.9000"
+    }
+  ],
+  "releaseNotes": "https://github.com/frbcesab/faircitations/blob/master/NEWS.md",
+  "readme": "https://github.com/FRBCesab/faircitations/blob/main/README.md",
+  "contIntegration": ["https://github.com/frbcesab/faircitations/actions/workflows/R-CMD-check.yaml", "https://github.com/frbcesab/faircitations/actions/workflows/pkgdown.yaml"]
+}
