@@ -6,8 +6,8 @@
 #' and the academic friendly status of several journals in the field of Ecology
 #' and Evolution.
 #'
-#' The `fairpub` package provides a selection of 291 DAFNEE journals and
-#' this function returns information about these journals
+#' The `fairpub` package provides a selection of 287 DAFNEE journals and
+#' this function returns information about these journals.
 #'
 #' @return A `data.frame` with three columns:
 #'   - `journal`, the name of the journal
