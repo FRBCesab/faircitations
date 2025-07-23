@@ -22,7 +22,8 @@ Depends:
     R (>= 3.5)
 Imports:
     openalexR,
-    RefManageR
+    RefManageR,
+    stringdist
 Suggests:
     knitr,
     rmarkdown,
