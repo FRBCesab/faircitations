@@ -65,8 +65,8 @@ Currently two functions are implemented:
   [`fp_compute_ratio()`](https://frbcesab.github.io/fairpub/reference/fp_compute_ratio.html)
   function helps user to compute citation ratios,
 - the
-  [`fp_get_dafnee_journals()`](https://frbcesab.github.io/fairpub/reference/fp_get_dafnee_journals.html)
-  function lists the available DAFNEE journals.
+  [`fp_list_dafnee_journals()`](https://frbcesab.github.io/fairpub/reference/fp_list_dafnee_journals.html)
+  function lists the available DAFNEE journals in `fairpub`.
 
 ## Installation
 

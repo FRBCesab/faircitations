@@ -4,6 +4,7 @@
 
 - Rename package (`faircitations` becomes `fairpub`)
 - Prefix functions with `fp_*()`
+- Rename function `fp_get_dafnee_journals()` in `fp_list_dafnee_journals()`
 
 ## New features
 

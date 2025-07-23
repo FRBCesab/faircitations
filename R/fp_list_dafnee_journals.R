@@ -20,7 +20,7 @@
 #'
 #' @examples
 #' # List DAFNEE journals in fairpub ----
-#' journals <- fp_get_dafnee_journals()
+#' journals <- fp_list_dafnee_journals()
 #'
 #' # Number of journals ----
 #' nrow(journals)
@@ -28,7 +28,7 @@
 #' # Preview of the outputs ----
 #' head(journals)
 
-fp_get_dafnee_journals <- function() {
+fp_list_dafnee_journals <- function() {
   data <- dafnee[, -1]
   colnames(data)[1] <- "journal"
 

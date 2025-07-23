@@ -2,4 +2,4 @@
 
 export(fp_compute_ratio)
 export(fp_doi_from_bibtex)
-export(fp_get_dafnee_journals)
+export(fp_list_dafnee_journals)
