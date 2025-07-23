@@ -81,6 +81,21 @@ references:
   year: '2025'
   doi: 10.32614/CRAN.package.RefManageR
 - type: software
+  title: stringdist
+  abstract: 'stringdist: Approximate String Matching, Fuzzy Text Search, and String
+    Distance Functions'
+  notes: Imports
+  url: https://github.com/markvanderloo/stringdist
+  repository: https://CRAN.R-project.org/package=stringdist
+  authors:
+  - family-names: Loo
+    given-names: Mark
+    name-particle: van der
+    email: mark.vanderloo@gmail.com
+    orcid: https://orcid.org/0000-0002-9807-4686
+  year: '2025'
+  doi: 10.32614/CRAN.package.stringdist
+- type: software
   title: knitr
   abstract: 'knitr: A General-Purpose Package for Dynamic Report Generation in R'
   notes: Suggests
