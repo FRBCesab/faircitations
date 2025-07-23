@@ -114,10 +114,7 @@ fp_compute_ratio <- function(doi) {
 
   ## Clean DOI ----
 
-  doi <- gsub("https://doi.org/", "", doi)
-  doi <- gsub("doi:", "", doi)
-  doi <- gsub("\\s", "", doi)
-  doi <- tolower(doi)
+  doi <- fp_clean_doi(doi)
 
   ## Remove duplicated references ----
 
@@ -141,8 +138,7 @@ fp_compute_ratio <- function(doi) {
 
   ## Prepare data ----
 
-  works$"doi" <- tolower(works$"doi")
-  works$"doi" <- gsub("https://doi.org/", "", works$"doi")
+  works$"doi" <- fp_clean_doi(works$"doi")
 
   doi <- data.frame("doi" = doi)
 
