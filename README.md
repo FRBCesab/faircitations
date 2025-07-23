@@ -21,6 +21,7 @@ Check](https://github.com/frbcesab/fairpub/actions/workflows/R-CMD-check.yaml/ba
 <p align="left">
 • <a href="#overview">Overview</a><br> •
 <a href="#features">Features</a><br> •
+<a href="#limitation">Limitation</a><br> •
 <a href="#installation">Installation</a><br> •
 <a href="#get-started">Get started</a><br> •
 <a href="#citation">Citation</a><br> •
@@ -98,7 +99,7 @@ of DOI can then be pass to the
 [`fp_compute_ratio()`](https://frbcesab.github.io/fairpub/reference/fp_compute_ratio.html)
 function.
 
-## Limitations
+## Limitation
 
 The package `fairpub` provides a small subset of the journals indexed in
 the DAFNEE database. We are currently working to increase this list of

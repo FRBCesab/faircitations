@@ -34,6 +34,7 @@ fairpub: How fair are you when you publish/cite scientific works? <img src="man/
 <p align="left">
   • <a href="#overview">Overview</a><br>
   • <a href="#features">Features</a><br>
+  • <a href="#limitation">Limitation</a><br>
   • <a href="#installation">Installation</a><br>
   • <a href="#get-started">Get started</a><br>
   • <a href="#citation">Citation</a><br>
@@ -95,7 +96,7 @@ The `fairpub` package can:
 In addition, the [`fp_doi_from_bibtex()`](https://frbcesab.github.io/fairpub/reference/fp_doi_from_bibtex.html) function helps user to easily extract DOI from a BibTeX file. The list of DOI can then be pass to the [`fp_compute_ratio()`](https://frbcesab.github.io/fairpub/reference/fp_compute_ratio.html) function. 
 
 
-## Limitations
+## Limitation
 
 The package `fairpub` provides a small subset of the journals indexed in the DAFNEE database.
 We are currently working to increase this list of journals.
