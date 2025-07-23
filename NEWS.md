@@ -4,12 +4,14 @@
 
 - Rename package (`faircitations` becomes `fairpub`)
 - Prefix functions with `fp_*()`
-- Rename function `fp_get_dafnee_journals()` in `fp_list_dafnee_journals()`
+- Rename function `get_dafnee_journals()` in `fp_list_dafnee_journals()`
+- Rename function `citation_ratio()` in `fp_compute_ratio()`
 
 ## New features
 
-- New function `fb_doi_from_bibtex()`
-- New function `fb_clean_doi()`
+- `fb_doi_from_bibtex()`: imports a BibTeX and returns DOI
+- `fb_clean_doi()`: cleans DOI
+- `fp_check_mailto()`: check that user sends it email to OpenAlex
 
 ## Fix bugs
 
