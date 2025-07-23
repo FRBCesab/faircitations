@@ -78,6 +78,18 @@
         "url": "https://cran.r-project.org"
       },
       "sameAs": "https://CRAN.R-project.org/package=testthat"
+    },
+    {
+      "@type": "SoftwareApplication",
+      "identifier": "withr",
+      "name": "withr",
+      "provider": {
+        "@id": "https://cran.r-project.org",
+        "@type": "Organization",
+        "name": "Comprehensive R Archive Network (CRAN)",
+        "url": "https://cran.r-project.org"
+      },
+      "sameAs": "https://CRAN.R-project.org/package=withr"
     }
   ],
   "softwareRequirements": {
@@ -113,7 +125,7 @@
     },
     "SystemRequirements": null
   },
-  "fileSize": "275.951KB",
+  "fileSize": "284.184KB",
   "citation": [
     {
       "@type": "SoftwareSourceCode",
@@ -131,5 +143,5 @@
   ],
   "releaseNotes": "https://github.com/frbcesab/fairpub/blob/master/NEWS.md",
   "readme": "https://github.com/FRBCesab/fairpub/blob/main/README.md",
-  "contIntegration": ["https://github.com/frbcesab/fairpub/actions/workflows/R-CMD-check.yaml", "https://github.com/frbcesab/fairpub/actions/workflows/pkgdown.yaml"]
+  "contIntegration": ["https://github.com/frbcesab/fairpub/actions/workflows/R-CMD-check.yaml", "https://github.com/frbcesab/fairpub/actions/workflows/pkgdown.yaml", "https://app.codecov.io/gh/frbcesab/fairpub"]
 }
