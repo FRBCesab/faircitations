@@ -2,9 +2,9 @@ citHeader("To cite fairpub in publications use:")
 
 bibentry(
   bibtype = "Manual",
-  title   = "fairpub: How fair are you when you cite scientific works?",
+  title   = "fairpub: How fair are you when you publish/cite scientific works?",
   author  = c(person("Casajus Nicolas")),
   year    = "2025",
-  note    = "R package version 0.0.1",
+  note    = "R package version 1.0.0",
   url     = "https://github.com/frbcesab/fairpub"
 )

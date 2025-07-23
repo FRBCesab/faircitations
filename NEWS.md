@@ -1,4 +1,4 @@
-# fairpub 0.0.1.9000
+# fairpub 1.0.0
 
 ## Major changes
 

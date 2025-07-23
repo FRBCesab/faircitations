@@ -166,7 +166,7 @@ vignette for a complete usage of the `fairpub` package.
 Please cite `fairpub` as:
 
 > Casajus Nicolas (2025) fairpub: How fair are you when you publish/cite
-> scientific works? R package version 0.0.1.
+> scientific works? R package version 1.0.0.
 > <https://github.com/frbcesab/fairpub/>
 
 ## Contributing

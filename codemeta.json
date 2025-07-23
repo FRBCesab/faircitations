@@ -7,7 +7,7 @@
   "codeRepository": "https://github.com/frbcesab/fairpub",
   "issueTracker": "https://github.com/frbcesab/fairpub/issues",
   "license": "https://spdx.org/licenses/GPL-2.0",
-  "version": "0.0.1.9000",
+  "version": "1.0.0",
   "programmingLanguage": {
     "@type": "ComputerLanguage",
     "name": "R",
@@ -123,9 +123,21 @@
       },
       "sameAs": "https://CRAN.R-project.org/package=RefManageR"
     },
+    "4": {
+      "@type": "SoftwareApplication",
+      "identifier": "stringdist",
+      "name": "stringdist",
+      "provider": {
+        "@id": "https://cran.r-project.org",
+        "@type": "Organization",
+        "name": "Comprehensive R Archive Network (CRAN)",
+        "url": "https://cran.r-project.org"
+      },
+      "sameAs": "https://CRAN.R-project.org/package=stringdist"
+    },
     "SystemRequirements": null
   },
-  "fileSize": "292.933KB",
+  "fileSize": "335.135KB",
   "citation": [
     {
       "@type": "SoftwareSourceCode",
@@ -136,9 +148,9 @@
           "name": "Casajus Nicolas"
         }
       ],
-      "name": "fairpub: How fair are you when you cite scientific works?",
+      "name": "fairpub: How fair are you when you publish/cite scientific works?",
       "url": "https://github.com/frbcesab/fairpub",
-      "description": "R package version 0.0.1"
+      "description": "R package version 1.0.0"
     }
   ],
   "releaseNotes": "https://github.com/frbcesab/fairpub/blob/master/NEWS.md",
