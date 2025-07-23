@@ -49,6 +49,9 @@ retrieve journal names from article DOI and the DAFNEE database
 academic friendly status of journals.
 }
 \examples{
+# Be polite and send your email to OpenAlex API ----
+options(openalexR.mailto = 'anonymous@mail.com')
+
 # Path to the BibTeX provided by <fairpub> ----
 filename <- system.file(
   file.path("extdata", "references.bib"),

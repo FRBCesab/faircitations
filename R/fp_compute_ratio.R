@@ -42,6 +42,9 @@
 #'   landscape. Submitted to Proc B - Biological Science Practices.
 #'
 #' @examples
+#' # Be polite and send your email to OpenAlex API ----
+#' options(openalexR.mailto = 'anonymous@mail.com')
+#'
 #' # Path to the BibTeX provided by <fairpub> ----
 #' filename <- system.file(
 #'   file.path("extdata", "references.bib"),
@@ -78,12 +81,7 @@ fp_compute_ratio <- function(doi) {
 
   ## Check if user is polite ----
 
-  # if (is.null(options()$"openalexR.mailto")) {
-  #   stop(
-  #     "Be polite with OpenAlex API and run: ",
-  #     "`options(openalexR.mailto = 'your_email')`"
-  #   )
-  # }
+  fp_check_mailto()
 
   ## Fill summary output ----
 
