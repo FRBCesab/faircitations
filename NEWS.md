@@ -15,6 +15,10 @@
 
 - Add a Get started vignette
 
+## Unit tests
+
+- Setup `testthat`
+- Setup code coverage GHA
 
 # fairpub 0.0.1
 
