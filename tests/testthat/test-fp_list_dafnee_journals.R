@@ -13,7 +13,7 @@ test_that("Test fp_list_dafnee_journals() for success", {
 
   # Journal
   expect_false(any(is.na(x$"journal")))
-  # expect_false(any(duplicated(x$"journal")))
+  expect_false(any(duplicated(x$"journal")))
 
   # Business model
   expect_false(any(is.na(x$"business_model")))

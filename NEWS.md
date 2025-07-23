@@ -11,6 +11,10 @@
 - New function `fb_doi_from_bibtex()`
 - New function `fb_clean_doi()`
 
+## Fix bugs
+
+- Remove duplicated journals in internal dataset
+
 ## Documentation
 
 - Add a Get started vignette
