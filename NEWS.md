@@ -11,7 +11,8 @@
 
 - `fb_doi_from_bibtex()`: imports a BibTeX and returns DOI
 - `fb_clean_doi()`: cleans DOI
-- `fp_check_mailto()`: check that user sends it email to OpenAlex
+- `fp_check_mailto()`: checks that user sends it email to OpenAlex
+- `fp_article_fairness()`: gets the fairness status of an article
 
 ## Fix bugs
 
