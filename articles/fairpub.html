@@ -78,8 +78,238 @@
 
     
     
+<div class="section level2">
+<h2 id="introduction">Introduction<a class="anchor" aria-label="anchor" href="#introduction"></a>
+</h2>
+<p>Scientific journals operate over a broad spectrum of publishing
+strategies, from strictly for-profit, to non-profit, and in-between
+business models (e.g. for-profit but academic friendly journals).
+Scientific publishing is increasingly dominated by for-profit journals,
+many of which attract prestige and submissions through high impact
+factors. In contrast, non-profit journals – those that reinvest revenue
+into the academic community – struggle to maintain visibility despite
+offering more equitable publishing models.</p>
+<p>The R package <code>fairpub</code> aims to provide a user-friendly
+toolbox to investigate the fairness of a research (article,
+bibliographic list, citation list, etc.). The fairness is measured
+according to two dimensions:</p>
+<ul>
+<li>the <strong>business model</strong> of the journal: for-profit
+vs. non-profit</li>
+<li>the <strong>academic friendly</strong> status of the journal: yes or
+no</li>
+</ul>
+<p>A journal with a non-profit business model is fairer than an academic
+friendly journal with a for-profit business model. But the later is
+still fairer than a non-academic friendly journal with a for-profit
+business model.</p>
+<p>This information comes from the <a href="https://dafnee.isem-evolution.fr/" class="external-link">DAFNEE initiative</a>, a
+Database of Academia Friendly jourNals in Ecology and Evolution.</p>
+<p><strong>Note:</strong> The package <code>fairpub</code> provides a
+subset of the original DAFNEE database. We are currently working to
+increase this list of journals.</p>
+<p>The package <code>fairpub</code> also implements the method proposed
+by Beck <em>et al.</em> (in revision): the strategic citation. By
+deliberately choosing to cite relevant articles from non-profit journals
+when multiple references would be equally valid, researchers can
+contribute to increasing their visibility and future impact factor. This
+method is implemented in the <code><a href="../reference/fp_compute_ratio.html">fp_compute_ratio()</a></code> function
+and can answer the question <strong>How fair am I when I cite previous
+works?</strong> by computing the fairness ratio on the references cited
+in a manuscript.</p>
+<p>The <code><a href="../reference/fp_compute_ratio.html">fp_compute_ratio()</a></code> function can also be used to
+answer the question <strong>How fair is my publication list?</strong> by
+computing the fairness ratio on the bibliography of an author.</p>
+</div>
+<div class="section level2">
+<h2 id="setup">Setup<a class="anchor" aria-label="anchor" href="#setup"></a>
+</h2>
+<p>Let’s explore the features of <code>fairpub</code> but first let’s
+load and attach the <code>fairpub</code> package:</p>
 <div class="sourceCode" id="cb1"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://github.com/frbcesab/fairpub" class="external-link">fairpub</a></span><span class="op">)</span></span></code></pre></div>
+<p>Some functions of <code>fairpub</code> query the <a href="https://openalex.org/" class="external-link">OpenAlex</a> bibliographic database by
+using the <a href="https://docs.ropensci.org/openalexR/" class="external-link"><code>openalexR</code></a>
+package. As recommended by the OpenAlex API <a href="https://docs.openalex.org/how-to-use-the-api/rate-limits-and-authentication#the-polite-pool" class="external-link">documentation</a>,
+it’s a good practice to send your email address to each query made by
+<code>openalexR</code>.</p>
+<p>Use the function <code><a href="https://rdrr.io/r/base/options.html" class="external-link">options()</a></code> to store your email address
+as a global variable available for the current session:</p>
+<div class="sourceCode" id="cb2"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/base/options.html" class="external-link">options</a></span><span class="op">(</span>openalexR.mailto <span class="op">=</span> <span class="st">'your_email@mail.com'</span><span class="op">)</span></span></code></pre></div>
+<p><strong>Note:</strong> No registration is required on the OpenAlex
+website.</p>
+</div>
+<div class="section level2">
+<h2 id="journal-fairness">Journal fairness<a class="anchor" aria-label="anchor" href="#journal-fairness"></a>
+</h2>
+<p>The function <code><a href="../reference/fp_journal_fairness.html">fp_journal_fairness()</a></code> of the package
+<code>fairpub</code> queries the DAFNEE database to retrieve the
+fairness of a journal.</p>
+<div class="sourceCode" id="cb3"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu"><a href="../reference/fp_journal_fairness.html">fp_journal_fairness</a></span><span class="op">(</span>journal <span class="op">=</span> <span class="st">"Science"</span><span class="op">)</span></span>
+<span><span class="co">#&gt;   journal                         fairness</span></span>
+<span><span class="co">#&gt; 1 Science Non-profit and academic friendly</span></span></code></pre></div>
+<p>This function returns a two-column <code>data.frame</code> with the
+name of the journal and the fairness status of the journal. This
+fairness status can have the following three values:</p>
+<ul>
+<li>Non-profit and academic friendly</li>
+<li>For-profit and academic friendly</li>
+<li>For-profit and non-academic friendly</li>
+</ul>
+<p>This function searches for an exact match (case insensitive) but if
+the journal is not found, a fuzzy search returns the three best
+candidates (low distance between characters). For instance:</p>
+<div class="sourceCode" id="cb4"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu"><a href="../reference/fp_journal_fairness.html">fp_journal_fairness</a></span><span class="op">(</span>journal <span class="op">=</span> <span class="st">"Science of Nature"</span><span class="op">)</span></span>
+<span><span class="co">#&gt; No exact match found!</span></span>
+<span><span class="co">#&gt; The fuzzy search returns these three best candidates:</span></span>
+<span><span class="co">#&gt;   'The Science of Nature'</span></span>
+<span><span class="co">#&gt;   'Science Advances'</span></span>
+<span><span class="co">#&gt;   'People and Nature'</span></span></code></pre></div>
+<p>Then, user can run this same function with the correct spelling:</p>
+<div class="sourceCode" id="cb5"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu"><a href="../reference/fp_journal_fairness.html">fp_journal_fairness</a></span><span class="op">(</span>journal <span class="op">=</span> <span class="st">"The Science of Nature"</span><span class="op">)</span></span>
+<span><span class="co">#&gt;                 journal                             fairness</span></span>
+<span><span class="co">#&gt; 1 The Science of Nature For-profit and non-academic friendly</span></span></code></pre></div>
+<p>As mentioned before, the list of DAFNEE journals included in
+<code>fairpub</code> is not exhaustive, and it’s possible that many
+journals are missing.</p>
+</div>
+<div class="section level2">
+<h2 id="article-fairness">Article fairness<a class="anchor" aria-label="anchor" href="#article-fairness"></a>
+</h2>
+<p>The function <code><a href="../reference/fp_article_fairness.html">fp_article_fairness()</a></code> of the package
+<code>fairpub</code> is dedicated to retrieve the fairness of a
+scientific article. This function first queries the <a href="https://openalex.org/" class="external-link">OpenAlex</a> bibliographic database to find
+the journal name from the DOI (digital object identifier) of the
+article. Then, the journal name is used to query the DAFNEE database to
+get the fairness status.</p>
+<p><strong>Note:</strong> Even if this function works at the article
+level, this fairness status is associated to the journal. In other
+words, all articles published in a journal have the same fairness
+status.</p>
+<div class="sourceCode" id="cb6"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu"><a href="../reference/fp_article_fairness.html">fp_article_fairness</a></span><span class="op">(</span>doi <span class="op">=</span> <span class="st">"10.1126/science.162.3859.1243"</span><span class="op">)</span></span>
+<span><span class="co">#&gt;   journal                         fairness</span></span>
+<span><span class="co">#&gt; 1 Science Non-profit and academic friendly</span></span></code></pre></div>
+<p>The output is identical to the output of
+<code><a href="../reference/fp_journal_fairness.html">fp_journal_fairness()</a></code>, i.e. a two-column
+<code>data.frame</code>.</p>
+<p><strong>Note:</strong> if the DOI is not found in OpenAlex, the
+output will be:</p>
+<div class="sourceCode" id="cb7"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu"><a href="../reference/fp_article_fairness.html">fp_article_fairness</a></span><span class="op">(</span>doi <span class="op">=</span> <span class="st">"10.xxxx/xxxx"</span><span class="op">)</span></span>
+<span><span class="co">#&gt;   journal                     fairness</span></span>
+<span><span class="co">#&gt; 1      NA Record not found in OpenAlex</span></span></code></pre></div>
+<p><strong>Note:</strong> if the DOI is found in OpenAlex but the
+journal is absent from DAFNEE, the output will be:</p>
+<div class="sourceCode" id="cb8"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu"><a href="../reference/fp_article_fairness.html">fp_article_fairness</a></span><span class="op">(</span>doi <span class="op">=</span> <span class="st">"10.21105/joss.05753"</span><span class="op">)</span></span>
+<span><span class="co">#&gt;                               journal                            fairness</span></span>
+<span><span class="co">#&gt; 1 The Journal of Open Source Software Record not found in DAFNEE database</span></span></code></pre></div>
+</div>
+<div class="section level2">
+<h2 id="citation-ratio">Citation ratio<a class="anchor" aria-label="anchor" href="#citation-ratio"></a>
+</h2>
+<p>One core function of <code>fairpub</code> is
+<code><a href="../reference/fp_compute_ratio.html">fp_compute_ratio()</a></code>. It computes the fairness ratio of a
+list of references cited in a manuscript. This ratio can be used by the
+author to replace some for-profit citations by fairer citations (e.g. 
+citations of articles published in non-profit journals). Of course, if
+the findings of two studies are similar.</p>
+<p>This function uses one argument: a vector of DOI. The
+<code>fairpub</code> package provides the
+<code><a href="../reference/fp_doi_from_bibtex.html">fp_doi_from_bibtex()</a></code> function that reads a BibTeX file and
+extracts all available DOI.</p>
+<p>Let’s use the function <code><a href="../reference/fp_doi_from_bibtex.html">fp_doi_from_bibtex()</a></code> with the
+BibTeX file provided as an example in <code>fairpub</code>.</p>
+<div class="sourceCode" id="cb9"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="co"># Path to the BibTeX provided by 'fairpub' ----</span></span>
+<span><span class="va">filename</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/system.file.html" class="external-link">system.file</a></span><span class="op">(</span></span>
+<span>  <span class="fu"><a href="https://rdrr.io/r/base/file.path.html" class="external-link">file.path</a></span><span class="op">(</span><span class="st">"extdata"</span>, <span class="st">"references.bib"</span><span class="op">)</span>,</span>
+<span>  package <span class="op">=</span> <span class="st">"fairpub"</span></span>
+<span><span class="op">)</span></span>
+<span></span>
+<span><span class="co"># Extract DOI from this BibTeX file ----</span></span>
+<span><span class="va">doi_list</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/fp_doi_from_bibtex.html">fp_doi_from_bibtex</a></span><span class="op">(</span><span class="va">filename</span><span class="op">)</span></span>
+<span><span class="va">doi_list</span></span>
+<span><span class="co">#&gt;  [1] "10.1098/rsos.160384"               NA                                 </span></span>
+<span><span class="co">#&gt;  [3] "10.1126/science.1212540"           "10.9745/ghsp-d-21-00145"          </span></span>
+<span><span class="co">#&gt;  [5] "10.1126/science.adk9900"           "10.1016/j.ecolecon.2021.107082"   </span></span>
+<span><span class="co">#&gt;  [7] "10.1177/014107680609900316"        "10.1093/reseval/rvad012"          </span></span>
+<span><span class="co">#&gt;  [9] "10.1111/ele.14395"                 "10.3998/ptpbio.3363"              </span></span>
+<span><span class="co">#&gt; [11] "10.4000/proceedings.elpub.2018.30" "10.1093/scipol/scs093"            </span></span>
+<span><span class="co">#&gt; [13] NA                                  "10.1002/leap.1102"                </span></span>
+<span><span class="co">#&gt; [15] "10.1087/0953151053584975"          NA                                 </span></span>
+<span><span class="co">#&gt; [17] "10.1177/0263395719858571"          "10.1017/s1062798709000532"        </span></span>
+<span><span class="co">#&gt; [19] "10.1371/journal.pone.0127502"      "10.1162/qss_c_00305"              </span></span>
+<span><span class="co">#&gt; [21] "10.1007/978-3-030-02511-3_1"       NA                                 </span></span>
+<span><span class="co">#&gt; [23] "10.1371/journal.pbio.1002264"      "10.3389/frma.2016.00007"          </span></span>
+<span><span class="co">#&gt; [25] "10.48550/arxiv.2407.16551"         NA                                 </span></span>
+<span><span class="co">#&gt; [27] "10.1080/08109028.2014.891710"      "10.1007/s11192-022-04586-1"       </span></span>
+<span><span class="co">#&gt; [29] "10.1098/rspb.2019.2047"            "10.5281/zenodo.4558704"           </span></span>
+<span><span class="co">#&gt; [31] "10.1162/qss_a_00272"               "10.3917/inno.063.0095"            </span></span>
+<span><span class="co">#&gt; [33] "10.1371/journal.pone.0243664"      "10.1257/jep.15.4.183"             </span></span>
+<span><span class="co">#&gt; [35] "10.1073/pnas.0305628101"           "10.1016/j.amjmed.2019.07.028"     </span></span>
+<span><span class="co">#&gt; [37] "10.32614/rj-2023-089"              "10.5534/wjmh.230001"</span></span></code></pre></div>
+<p><strong>Note:</strong> Make sure to check your references, especially
+the DOI field. In this example, some references don’t have a DOI (book,
+book chapter, etc.). The <code><a href="../reference/fp_doi_from_bibtex.html">fp_doi_from_bibtex()</a></code> function
+don’t remove these references to provide a full report (see below the
+output of the <code><a href="../reference/fp_compute_ratio.html">fp_compute_ratio()</a></code> function).</p>
+<p>Now we have a vector of DOI, we can use the
+<code><a href="../reference/fp_compute_ratio.html">fp_compute_ratio()</a></code> function to compute the fairness ratio
+of this list.</p>
+<div class="sourceCode" id="cb10"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu"><a href="../reference/fp_compute_ratio.html">fp_compute_ratio</a></span><span class="op">(</span>doi <span class="op">=</span> <span class="va">doi_list</span><span class="op">)</span></span>
+<span><span class="co">#&gt; $summary</span></span>
+<span><span class="co">#&gt;                                            metric value</span></span>
+<span><span class="co">#&gt; 1                                Total references    38</span></span>
+<span><span class="co">#&gt; 2                             References with DOI    33</span></span>
+<span><span class="co">#&gt; 3                         Deduplicated references    33</span></span>
+<span><span class="co">#&gt; 4                    References found in OpenAlex    30</span></span>
+<span><span class="co">#&gt; 5                      References found in DAFNEE    10</span></span>
+<span><span class="co">#&gt; 6     Non-profit and academic friendly references     9</span></span>
+<span><span class="co">#&gt; 7     For-profit and academic friendly references     1</span></span>
+<span><span class="co">#&gt; 8 For-profit and non-academic friendly references     0</span></span>
+<span><span class="co">#&gt; </span></span>
+<span><span class="co">#&gt; $ratios</span></span>
+<span><span class="co">#&gt;     Non-profit and academic friendly     For-profit and academic friendly </span></span>
+<span><span class="co">#&gt;                                  0.9                                  0.1 </span></span>
+<span><span class="co">#&gt; For-profit and non-academic friendly </span></span>
+<span><span class="co">#&gt;                                  0.0</span></span></code></pre></div>
+<p>This function returns a two-element <code>list</code>:</p>
+<ul>
+<li>
+<code>summary</code>: a two-column <code>data.frame</code> with the
+number of references remaining after each step of the workflow</li>
+<li>
+<code>ratio</code>: a three-element <code>vector</code> with value
+of the three fairness ratios</li>
+</ul>
+<p>In this example, this list of references has a fairness ratio
+(<code>Non-profit and academic friendly</code>) of 90%. But this value
+must be interpreted with caution. Indeed this ratio has been computed on
+26% (10 over 38) of the references, because the journal of 20 articles
+are not indexed in the DAFNEE database.</p>
+</div>
+<div class="section level2">
+<h2 id="author-ratio">Author ratio<a class="anchor" aria-label="anchor" href="#author-ratio"></a>
+</h2>
+<p>It’s possible to use the <code><a href="../reference/fp_compute_ratio.html">fp_compute_ratio()</a></code> function to
+compute the fairness ratio of all publications of an author. In that
+case, the list of DOI should contain all articles published by this
+author.</p>
+</div>
+<div class="section level2">
+<h2 id="references">References<a class="anchor" aria-label="anchor" href="#references"></a>
+</h2>
+<p>Beck M <em>et al.</em> (in revision) Strategic citations for a fairer
+academic landscape. Submitted to Proc B - Biological Science
+Practices.</p>
+</div>
   </div>
 
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
