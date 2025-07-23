@@ -128,8 +128,12 @@ fp_compute_ratio <- function(doi) {
 
   ## Get OpenAlex metadata ----
 
-  works <- openalexR::oa_fetch(entity = "work", doi = doi)
+  works <- suppressWarnings(openalexR::oa_fetch(entity = "work", doi = doi))
   works <- as.data.frame(works)
+
+  if (nrow(works) == 0) {
+    stop("No record found in OpenAlex")
+  }
 
   works <- works[, c("doi", "source_id")]
   colnames(works)[2] <- "oa_source_id"
@@ -154,9 +158,13 @@ fp_compute_ratio <- function(doi) {
     )
   )
 
-  if (nrow(works) == 0) {
-    stop("No reference found in OpenAlex")
-  }
+  # I guess this is not possible because if there is no record in OA, the
+  # output of openalexR::oa_fetch() is an empty data.frame. This case is checked
+  # right after the call of this function.
+  #
+  # if (nrow(works) == 0) {
+  #   stop("No reference found in OpenAlex")
+  # }
 
   ## Add Dafnee metadata (internal dataset) ----
 
@@ -171,7 +179,7 @@ fp_compute_ratio <- function(doi) {
   )
 
   if (nrow(data_for_ratio) == 0) {
-    stop("No reference journal found in DAFNEE database")
+    stop("No record found in DAFNEE database")
   }
 
   ## Compute ratios ----
