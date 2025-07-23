@@ -19,3 +19,19 @@ knitr::opts_chunk$set(
 ```{r setup}
 library(fairpub)
 ```
+
+
+## Introduction
+
+
+
+## Article status
+
+Coming soon...
+
+## Publication ratio
+
+
+
+## Citation ratio
+
