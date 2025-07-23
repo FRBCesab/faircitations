@@ -2,7 +2,8 @@
 journals <- c(
   "Science",
   "Science of Nature",
-  "The Science of Nature"
+  "The Science of Nature",
+  "Ecology Letters"
 )
 
 journal_na <- c("string", NA)
@@ -103,4 +104,17 @@ test_that("Test fp_journal_fairness() for success", {
 
   expect_equal(res[1, "journal"], journals[3])
   expect_equal(res[1, "fairness"], "For-profit and non-academic friendly")
+
+  # Test for the third fairness category
+  expect_silent(res <- fp_journal_fairness(journals[4]))
+
+  expect_true(inherits(res, "data.frame"))
+  expect_equal(ncol(res), 2L)
+  expect_equal(nrow(res), 1L)
+
+  expect_true("journal" %in% colnames(res))
+  expect_true("fairness" %in% colnames(res))
+
+  expect_equal(res[1, "journal"], journals[4])
+  expect_equal(res[1, "fairness"], "For-profit and academic friendly")
 })
