@@ -199,13 +199,16 @@ This function returns a two-element `list`:
 
 - `summary`: a two-column `data.frame` with the number of references remaining
 after each step of the workflow
-- `ratio`: a three-element `vector` with value of the three fairness ratios
+- `ratio`: a three-element `vector` with the value of the three fairness ratios
 
 In this example, this list of references has a fairness ratio 
 (`Non-profit and academic friendly`) of 90%. But this value must be interpreted 
 with caution. Indeed this ratio has been computed on 26% (10 over 38) of the 
-references, because the journal of 20 articles are not indexed in the DAFNEE 
+references, because the journal of 20 articles is not indexed in the DAFNEE 
 database.
+
+As mentioned before, we are currently working to improve the list of journals
+indexed in the DAFNEE database.
 
 
 ## Author ratio

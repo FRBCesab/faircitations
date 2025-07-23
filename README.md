@@ -33,41 +33,76 @@ Check](https://github.com/frbcesab/fairpub/actions/workflows/R-CMD-check.yaml/ba
 
 Scientific journals operate over a broad spectrum of publishing
 strategies, from strictly for-profit, to non-profit, and in-between
-business models (e.g.  for-profit but academic friendly journals).
+business models (e.g. for-profit but academic friendly journals).
 Scientific publishing is increasingly dominated by for-profit journals,
 many of which attract prestige and submissions through high impact
 factors. In contrast, non-profit journals – those that reinvest revenue
 into the academic community – struggle to maintain visibility despite
 offering more equitable publishing models.
 
-To help rebalance this inequity, Beck *et al.* (in revision) propose a
-soft-power, low-risk strategy: strategic citation. By deliberately
-choosing to cite relevant articles from non-profit journals when
-multiple references would be equally valid, researchers can contribute
-to increasing their visibility and future impact factor.
+The R package `fairpub` aims to provide a user-friendly toolbox to
+investigate the fairness of a research (article, bibliographic list,
+citation list, etc.). The fairness is measured according to two
+dimensions:
 
-The aim of the R package `fairpub` is to provide a user-friendly way to
-compute the non-profit and academic friendly ratio of the bibliographic
-reference list before submitting a manuscript for peer review.
+- the **business model** of the journal: for-profit vs. non-profit
+- the **academic friendly** status of the journal: yes or no
+
+A journal with a non-profit business model is fairer than an academic
+friendly journal with a for-profit business model. But the later is
+still fairer than a non-academic friendly journal with a for-profit
+business model.
+
+This information comes from the [DAFNEE
+initiative](https://dafnee.isem-evolution.fr/), a Database of Academia
+Friendly jourNals in Ecology and Evolution.
+
+The package `fairpub` also implements the method proposed by Beck *et
+al.* (in revision): the strategic citation. By deliberately choosing to
+cite relevant articles from non-profit journals when multiple references
+would be equally valid, researchers can contribute to increasing their
+visibility and future impact factor. This method is implemented in the
+`fp_compute_ratio()` function and can answer the question **How fair am
+I when I cite previous works?** by computing the fairness ratio on the
+references cited in a manuscript.
+
+The package can also answer the question **How fair is my publication
+list?**. See the [Get
+started](https://frbcesab.github.io/fairpub/articles/fairpub.html)
+vignette for more information.
 
 ## Features
 
-`fairpub` reads a bibliographic file (e.g. BibTeX) to extract article
-DOI. Then it queries the [OpenAlex](https://openalex.org) bibliographic
-database to retrieve journal names. Finally it uses the [DAFNEE
-database](https://dafnee.isem-evolution.fr/) that provides the business
-model and the academic friendly status of several journals in the field
-of Ecology and Evolution to compute the non-profit and academic friendly
-ratio.
+The `fairpub` package can:
 
-Currently two functions are implemented:
-
-- the
+- retrieve the fairness status of a journal with the
+  [`fp_journal_fairness()`](https://frbcesab.github.io/fairpub/reference/fp_journal_fairness.html)
+  function
+- retrieve the fairness status of an article with the
+  [`fp_article_fairness()`](https://frbcesab.github.io/fairpub/reference/fp_article_fairness.html)
+  function and by querying the [OpenAlex](https://openalex.org)
+  bibliographic database
+- compute the fairness ratio of a list references cited in a manuscript
+  with the
   [`fp_compute_ratio()`](https://frbcesab.github.io/fairpub/reference/fp_compute_ratio.html)
-  function helps user to compute citation ratios,
-- the
-  [`fp_list_dafnee_journals()`](https://frbcesab.github.io/fairpub/reference/fp_list_dafnee_journals.html)
-  function lists the available DAFNEE journals in `fairpub`.
+  function
+- compute the fairness ratio of all publications of an author (or a
+  team) with the
+  [`fp_compute_ratio()`](https://frbcesab.github.io/fairpub/reference/fp_compute_ratio.html)
+  function
+
+In addition, the
+[`fp_doi_from_bibtex()`](https://frbcesab.github.io/fairpub/reference/fp_doi_from_bibtex.html)
+function helps user to easily extract DOI from a BibTeX file. The list
+of DOI can then be pass to the
+[`fp_compute_ratio()`](https://frbcesab.github.io/fairpub/reference/fp_compute_ratio.html)
+function.
+
+## Limitations
+
+The package `fairpub` provides a small subset of the journals indexed in
+the DAFNEE database. We are currently working to increase this list of
+journals.
 
 ## Installation
 
@@ -116,8 +151,14 @@ fp_compute_ratio(doi = list_of_doi)
     ## Non-profit & acad. friendly  For-profit & acad. friendly  For-profit & non-acad. friendly 
     ##                         0.9                          0.1                              0.0 
 
-Visit the [Get
-started](https://frbcesab.github.io/fairpub/articles/fairpub.html)
+In this example, this list of references has a fairness ratio
+(`Non-profit and academic friendly`) of 90%. But this value must be
+interpreted with caution. Indeed this ratio has been computed on 26% (10
+over 38) of the references, because the journal of 20 articles is not
+indexed in the DAFNEE database.
+
+Visit the [**Get
+started**](https://frbcesab.github.io/fairpub/articles/fairpub.html)
 vignette for a complete usage of the `fairpub` package.
 
 ## Citation
