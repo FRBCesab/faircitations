@@ -13,7 +13,7 @@ status](https://www.r-pkg.org/badges/version/fairpub)](https://CRAN.R-project.or
 [![R CMD
 Check](https://github.com/frbcesab/fairpub/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/frbcesab/fairpub/actions/workflows/R-CMD-check.yaml)
 [![Website](https://github.com/frbcesab/fairpub/actions/workflows/pkgdown.yaml/badge.svg)](https://github.com/frbcesab/fairpub/actions/workflows/pkgdown.yaml)
-[![codecov](https://codecov.io/gh/frbcesab/fairpub/branch/main/graph/badge.svg)](https://app.codecov.io/gh/frbcesab/fairpub)
+[![codecov](https://codecov.io/gh/frbcesab/fairpub/graph/badge.svg?token=pTqQ0978iE)](https://codecov.io/gh/frbcesab/fairpub)
 [![License: GPL (\>=
 2)](https://img.shields.io/badge/License-GPL%20%28%3E%3D%202%29-blue.svg)](https://choosealicense.com/licenses/gpl-2.0/)
 <!-- badges: end -->

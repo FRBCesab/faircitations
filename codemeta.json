@@ -137,7 +137,7 @@
     },
     "SystemRequirements": null
   },
-  "fileSize": "335.135KB",
+  "fileSize": "335.18KB",
   "citation": [
     {
       "@type": "SoftwareSourceCode",
@@ -155,5 +155,5 @@
   ],
   "releaseNotes": "https://github.com/frbcesab/fairpub/blob/master/NEWS.md",
   "readme": "https://github.com/FRBCesab/fairpub/blob/main/README.md",
-  "contIntegration": ["https://github.com/frbcesab/fairpub/actions/workflows/R-CMD-check.yaml", "https://github.com/frbcesab/fairpub/actions/workflows/pkgdown.yaml", "https://app.codecov.io/gh/frbcesab/fairpub"]
+  "contIntegration": ["https://github.com/frbcesab/fairpub/actions/workflows/R-CMD-check.yaml", "https://github.com/frbcesab/fairpub/actions/workflows/pkgdown.yaml", "https://codecov.io/gh/frbcesab/fairpub"]
 }
